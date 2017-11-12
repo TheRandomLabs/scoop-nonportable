@@ -1,0 +1,47 @@
+{
+    "homepage": "https://www.voidtools.com/",
+    "license": "https://www.voidtools.com/License.txt",
+    "version": "1.4.1.877",
+    "architecture": {
+        "64bit": {
+            "url": "http://www.voidtools.com/Everything-1.4.1.877.x64-Setup.exe",
+            "hash": "47ed32d5d5ff3ce2fd3c166666f9d4294ee2893158902d6797f0eefb3cb0dc7f"
+        },
+        "32bit": {
+            "url": "http://www.voidtools.com/Everything-1.4.1.877.x86-Setup.exe",
+            "hash": "7f5a7cbfe72eb23e6570999aeaa198772dd71ff2c29f16ba527a091a2a1a91dd"
+        }
+    },
+    "installer": {
+        "args": [
+            "/S", "/D=$dir"
+        ]
+    },
+    "uninstaller": {
+        "file": "Uninstall.exe",
+        "args": [
+            "/S"
+        ]
+    },
+    "bin": "Everything.exe",
+    "checkver": "Download Everything ([\\d.]+)",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "http://www.voidtools.com/Everything-$version.x64-Setup.exe"
+            },
+            "32bit": {
+                "url": "http://www.voidtools.com/Everything-$version.x86-Setup.exe"
+            }
+        },
+        "hash": {
+            "url": "https://www.voidtools.com/Everything-$version.sha256"
+        }
+    },
+    "shortcuts": [
+        [
+            "Everything.exe",
+            "Everything"
+        ]
+    ]
+}
