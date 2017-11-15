@@ -17,7 +17,7 @@
     "env_add_path": [
         "."
     ],
-    "notes": "you need to add \"%APPDATA%\\npm\" to %PATH% manually",
+    "notes": "please add \"%APPDATA%\\npm\" to the %PATH% environment variable",
     "checkver": {
         "url": "https://nodejs.org/en/download/",
         "re": "LTS Version: <strong>([\\d.]+)</strong>"
