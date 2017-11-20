@@ -18,7 +18,12 @@
         "node.exe",
         "npm.cmd"
     ],
-    "notes": "please add \"%APPDATA%\\npm\" to the %PATH% environment variable",
+    "installer": {
+        "script": "add_first_in_path \"$env:APPDATA\\npm\" $global"
+    },
+    "uninstaller": {
+        "script": "remove_from_path \"$env:APPDATA\\npm\" $global"
+    },
     "checkver": {
         "url": "https://nodejs.org/en/download/",
         "re": "LTS Version: <strong>([\\d.]+)</strong>"
