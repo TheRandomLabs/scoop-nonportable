@@ -14,8 +14,9 @@
             "extract_dir": "node-v8.9.1-win-x86"
         }
     },
-    "env_add_path": [
-        "."
+    "bin": [
+        "node.exe",
+        "npm.cmd"
     ],
     "notes": "please add \"%APPDATA%\\npm\" to the %PATH% environment variable",
     "checkver": {
