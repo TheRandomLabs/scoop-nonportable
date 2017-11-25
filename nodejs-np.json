@@ -1,0 +1,46 @@
+{
+    "homepage": "https://nodejs.org",
+    "version": "9.2.0",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://nodejs.org/dist/v9.2.0/node-v9.2.0-win-x64.7z",
+            "hash": "5295fd5926ecf67b5aaf0fba38022790d8a186dfcdd3b9070238ad73e748ba9d",
+            "extract_dir": "node-v9.2.0-win-x64"
+        },
+        "32bit": {
+            "url": "https://nodejs.org/dist/v9.2.0/node-v9.2.0-win-x86.7z",
+            "hash": "ded691d3c919cb4fc1176df5a2dbe34f6e05817817008f82fadda1697b86895f",
+            "extract_dir": "node-v9.2.0-win-x86"
+        }
+    },
+    "bin": [
+        "node.exe",
+        "npm.cmd"
+    ],
+    "installer": {
+        "script": "add_first_in_path \"$env:APPDATA\\npm\" $global"
+    },
+    "uninstaller": {
+        "script": "remove_from_path \"$env:APPDATA\\npm\" $global"
+    },
+    "checkver": {
+        "url": "https://nodejs.org/dist/latest/",
+        "re": "node-v([\\d.]+)-x86.msi"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x64.7z",
+                "extract_dir": "node-v$version-win-x64"
+            },
+            "32bit": {
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x86.7z",
+                "extract_dir": "node-v$version-win-x86"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHASUMS256.txt.asc"
+        }
+    }
+}
