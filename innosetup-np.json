@@ -1,0 +1,30 @@
+{
+    "homepage": "http://www.jrsoftware.org/isinfo.php",
+    "version": "5.5.9",
+    "license": "Inno Setup License",
+    "url": "http://www.jrsoftware.org/download.php/is-unicode.exe#innosetup-5.5.9-unicode.exe",
+    "hash": "5b51ae6977bebba937ac18e0e80c1899e37dfaa12f51ccd817978ef07ae19cb3",
+    "bin": [
+        "Compil32.exe"
+    ],
+    "installer": {
+        "args": [
+            "/VERYSILENT",
+            "/DIR=\"$dir\"",
+            "/NORESTART"
+        ]
+    },
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/VERYSILENT"
+        ]
+    },
+    "checkver": {
+        "url": "http://www.jrsoftware.org/isdl.php",
+        "re": "innosetup-([\\d.]+)-unicode\\.exe"
+    },
+    "autoupdate": {
+        "url": "http://www.jrsoftware.org/download.php/is-unicode.exe#innosetup-$version-unicode.exe"
+    }
+}
