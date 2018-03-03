@@ -15,7 +15,7 @@
         ]
     },
     "uninstaller": {
-        "file": "uninstall.exe",
+        "file": "uninst-nsis.exe",
         "args": [
             "/S"
         ]
