@@ -1,13 +1,13 @@
 {
     "homepage": "http://nsis.sourceforge.net/",
     "license": "http://nsis.sourceforge.net/License",
-    "version": "3.02.1",
-    "url": "https://sourceforge.net/projects/nsis/files/NSIS%203/3.02.1/nsis-3.02.1-setup.exe",
+    "version": "3.03",
+    "url": "https://sourceforge.net/projects/nsis/files/NSIS%203/3.03/nsis-3.03-setup.exe",
     "bin": [
         "makensis.exe",
         "nsis.exe"
     ],
-    "hash": "sha1:42d061db6095965ea1c5b0efaff52b23e0564a34",
+    "hash": "sha1:14c8f24fa16058885da83a63d958e74cd62dfb6e",
     "installer": {
         "args": [
             "/S",
