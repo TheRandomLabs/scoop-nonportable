@@ -1,16 +1,16 @@
 {
     "homepage": "https://notepad-plus-plus.org/",
-    "version": "7.5.5",
+    "version": "7.5.6",
     "license": "GPL",
     "notes": "The following page explains how to add explorer context menu entries for notepad++. http://docs.notepad-plus-plus.org/index.php/Explorer_Context_Menu",
     "architecture": {
         "64bit": {
-            "url": "https://notepad-plus-plus.org/repository/7.x/7.5.5/npp.7.5.5.Installer.x64.exe",
-            "hash": "sha1:90e252fd88e7f7ce60f6c4ab0b4c8472cd658eff"
+            "url": "https://notepad-plus-plus.org/repository/7.x/7.5.6/npp.7.5.6.Installer.x64.exe",
+            "hash": "sha1:36b3ae08f58642ff65e04b0c314465a5094fbe67"
         },
         "32bit": {
-            "url": "https://notepad-plus-plus.org/repository/7.x/7.5.5/npp.7.5.5.Installer.exe",
-            "hash": "sha1:c92f9a2efc02eb3c4460b6aaccf9b9b7c8718ab8"
+            "url": "https://notepad-plus-plus.org/repository/7.x/7.5.6/npp.7.5.6.Installer.exe",
+            "hash": "sha1:ea8c13b964fd9380899e18d17e0b59aeb50e3ad0"
         }
     },
     "checkver": "Current Version:.*?<span>(.*?)</span>",
