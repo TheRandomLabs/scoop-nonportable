@@ -21,8 +21,8 @@
         ]
     },
     "checkver": {
-        "url": "http://nsis.sourceforge.net/Download",
-        "re": "\\/rn\\/v([\\d.]+)\""
+        "url": "http://nsis.sourceforge.net/Main_Page",
+        "re": "http://nsis\\.sourceforge\\.net/Docs/AppendixF\\.html#v([\\d\\.]+)"
     },
     "autoupdate": {
         "url": "https://sourceforge.net/projects/nsis/files/NSIS%203/$version/nsis-$version-setup.exe"
