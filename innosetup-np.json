@@ -1,9 +1,9 @@
 {
     "homepage": "http://www.jrsoftware.org/isinfo.php",
-    "version": "5.6.0",
+    "version": "5.6.1",
     "license": "Inno Setup License",
-    "url": "http://www.jrsoftware.org/download.php/is-unicode.exe#innosetup-5.6.0-unicode.exe",
-    "hash": "84a97b5820f83e7eb7258b69cc857c4f446dfb5c7c337c35e05a0cc304729346",
+    "url": "http://www.jrsoftware.org/download.php/is-unicode.exe#innosetup-5.6.1-unicode.exe",
+    "hash": "27d49e9bc769e9d1b214c153011978db90dc01c2acd1ddcd9ed7b3fe3b96b538",
     "bin": [
         "Compil32.exe"
     ],
