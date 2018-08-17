@@ -1,0 +1,28 @@
+{
+    "homepage": "https://www.virtualbox.org/",
+    "description": "Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.",
+    "license": "GPL-2.0-only",
+    "version": "5.2.18",
+    "url": "http://download.virtualbox.org/virtualbox/5.2.18/VirtualBox-5.2.18-124319-Win.exe#/VBoxSetup.exe",
+    "hash": "2607f510bcb5dca11a189ca769bbd28e0ff3ff1d082762c03f062b406c8763f3",
+    "installer": {
+        "script": "Start-Process cmd -Verb Runas \"/c $dir\\VBoxSetup.exe --msiparams INSTALLDIR=$dir VBOX_START=0 --silent\" -Wait -WindowStyle hidden"
+    },
+    "post_install": "remove-item \"$dir\\VBoxSetup.exe\"",
+    "uninstaller": {
+        "script": [
+            "$id = wmic product where \"\"\"name like 'Oracle VM VirtualBox%'\"\"\" get IdentifyingNumber | find /i \"\"\"-\"\"\"",
+            "Start-Process cmd -Verb Runas \"/c msiexec /x $id /qn\" -Wait -WindowStyle hidden"
+        ]
+    },
+    "checkver": {
+        "url": "https://update.virtualbox.org/query.php?platform=WINDOWS_64BITS_GENERIC&version=0.0.0",
+        "re": "VirtualBox-(?<version>[\\d.]+)-(?<revision>[\\d]+)-Win.exe"
+    },
+    "autoupdate": {
+        "url": "http://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/VBoxSetup.exe",
+        "hash": {
+            "url": "https://www.virtualbox.org/download/hashes/$version/SHA256SUMS"
+        }
+    }
+}
