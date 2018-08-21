@@ -17,7 +17,7 @@
         "file": "unins000.exe",
         "args": [
             "/verysilent",
-            "/nocancle",
+            "/nocancel",
             "/norestart"
         ]
     },
