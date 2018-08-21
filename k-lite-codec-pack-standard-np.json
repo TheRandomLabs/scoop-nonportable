@@ -8,7 +8,7 @@
         "file": "klite_setup.exe",
         "args": [
             "/verysilent",
-            "/nocancle",
+            "/nocancel",
             "/norestart",
             "/dir=$dir"
         ]
