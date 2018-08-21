@@ -8,7 +8,7 @@
         "file": "teracopy.exe",
         "args": [
             "/verysilent",
-            "/nocancle",
+            "/nocancel",
             "/norestart"
         ]
     },
