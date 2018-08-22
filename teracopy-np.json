@@ -13,7 +13,7 @@
         ]
     },
     "uninstaller": {
-        "script": "& \"$Env:Programfiles\\TeraCopy\\unins000.exe\" /verysilent /nocancle /norestart"
+        "script": "& \"$Env:Programfiles\\TeraCopy\\unins000.exe\" /verysilent /nocancel /norestart"
     },
     "checkver": {
         "url": "https://www.codesector.com/downloads",
