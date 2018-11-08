@@ -1,0 +1,37 @@
+{
+    "homepage": "https://www.pgadmin.org",
+    "description": "pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL.",
+    "version": "3.2",
+    "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v3.2/windows/pgadmin4-3.2-x86.exe",
+    "hash": "749f1dd7836da05cf0fe2e9fc50dd5111614cde656ba722f983aa3e065b543ae",
+    "bin": [
+        "runtime\\psql.exe",
+        "runtime\\pgAdmin4.exe",
+        "runtime\\pg_restore.exe",
+        "runtime\\pg_dumpall.exe",
+        "runtime\\pg_dump.exe"
+    ],
+    "installer": {
+        "args": [
+            "/verysilent",
+            "/nocancel",
+            "/norestart",
+            "/dir=$dir"
+        ]
+    },
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/verysilent",
+            "/nocancel",
+            "/norestart"
+        ]
+    },
+    "checkver": {
+        "url": "https://www.pgadmin.org/download/pgadmin-4-windows/",
+        "re": "pgAdmin 4 v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v$version/windows/pgadmin4-$version-x86.exe"
+    }
+}
