@@ -2,9 +2,9 @@
     "homepage": "https://www.virtualbox.org/",
     "description": "Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.",
     "license": "GPL-2.0-only",
-    "version": "5.2.18",
-    "url": "http://download.virtualbox.org/virtualbox/5.2.18/VirtualBox-5.2.18-124319-Win.exe#/VBoxSetup.exe",
-    "hash": "2607f510bcb5dca11a189ca769bbd28e0ff3ff1d082762c03f062b406c8763f3",
+    "version": "5.2.20",
+    "url": "http://download.virtualbox.org/virtualbox/5.2.20/VirtualBox-5.2.20-125813-Win.exe#/VBoxSetup.exe",
+    "hash": "56ce706480d3ea411bcbf8932122633eb98e79202f1a4460d255a51997ba84f6",
     "installer": {
         "script": "Start-Process cmd -Verb Runas \"/c $dir\\VBoxSetup.exe --msiparams INSTALLDIR=$dir VBOX_START=0 --silent\" -Wait -WindowStyle hidden"
     },
