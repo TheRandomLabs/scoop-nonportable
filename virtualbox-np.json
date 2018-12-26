@@ -2,9 +2,13 @@
     "homepage": "https://www.virtualbox.org/",
     "description": "Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.",
     "license": "GPL-2.0-only",
-    "version": "5.2.22",
-    "url": "http://download.virtualbox.org/virtualbox/5.2.22/VirtualBox-5.2.22-126460-Win.exe#/VBoxSetup.exe",
-    "hash": "0c1a8f1de1c5bd18b00d81419f8190660ff36c9a5fddae4ed2c6a2216581d521",
+    "version": "6.0.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.virtualbox.org/virtualbox/6.0.0/VirtualBox-6.0.0-127566-Win.exe#/VBoxSetup.exe",
+            "hash": "e943e84158057da06e3355b0e170b82507cbe7080f5bbf06c9f4a7674ffa783c"
+        }
+    },
     "installer": {
         "script": "Start-Process cmd -Verb Runas \"/c $dir\\VBoxSetup.exe --msiparams INSTALLDIR=$dir VBOX_START=0 --silent\" -Wait -WindowStyle hidden"
     },
@@ -20,9 +24,11 @@
         "re": "VirtualBox-(?<version>[\\d.]+)-(?<revision>[\\d]+)-Win.exe"
     },
     "autoupdate": {
-        "url": "http://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/VBoxSetup.exe",
-        "hash": {
-            "url": "https://www.virtualbox.org/download/hashes/$version/SHA256SUMS"
+        "64bit": {
+            "url": "http://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/VBoxSetup.exe",
+            "hash": {
+                "url": "https://www.virtualbox.org/download/hashes/$version/SHA256SUMS"
+            }
         }
     }
 }
