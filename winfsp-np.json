@@ -1,0 +1,28 @@
+{
+    "homepage": "http://www.secfs.net/winfsp/",
+    "description": "WinFsp attempts to ease the task of writing a new file system for Windows in the same way that FUSE has done so for UNIX.",
+    "version": "1.3.18160",
+    "license": "GPL-3.0-only",
+    "url": "https://github.com/billziss-gh/winfsp/releases/download/v1.3/winfsp-1.3.18160.msi",
+    "hash": "b3e95975031186d33e345a9c67d82afaf328a24bc8227666a4f9fc0ee40a2748",
+    "installer": {
+        "file": "winfsp-1.3.18160.msi",
+        "keep": "true"
+    },
+    "uninstaller": {
+        "file": "winfsp-1.3.18160.msi"
+    },
+    "checkver": {
+        "github": "http://www.secfs.net/winfsp"
+    },
+    "autoupdate":{
+        "url": "https://github.com/billziss-gh/winfsp/releases/download/v$majorVersion.$minorVersion/winfsp-$version.msi",
+        "installer": {
+            "file": "winfsp-$version.msi",
+            "keep": "true"
+        },
+        "uninstaller": {
+            "file": "winfsp-$version.msi"
+        }
+    }
+}
