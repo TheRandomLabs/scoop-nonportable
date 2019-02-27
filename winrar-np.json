@@ -14,7 +14,6 @@
             "hash": "2b56b58a2ec260589770b377256831d5c3d0f4efe012b109f2c9d31fcc855ff7"
         }
     },
-    "persist": "rarreg.key",
     "bin": [
         "rar.exe",
         "unrar.exe"
