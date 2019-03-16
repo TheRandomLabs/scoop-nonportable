@@ -1,0 +1,51 @@
+{
+    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
+    "version": "0.71",
+    "license": "https://www.chiark.greenend.org.uk/~sgtatham/putty/licence.html",
+    "architecture": {
+        "64bit": {
+            "url": "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.71-installer.msi",
+            "hash": "sha512:9b3d010b0310efa1123c828fd664de1f1331d9a7e9796104187f10fd4fe0a0aff5cb1c541d810905e7751a9adc6691ba66927f57b761081ed19a89e0b2998be8"
+        },
+        "32bit": {
+            "url": "https://the.earth.li/~sgtatham/putty/latest/w32/putty-0.71-installer.msi",
+            "hash": "sha512:2d27bfbc830022da545da5e64f8d1d197bdd5e85730f714d17ad7da495766cb10a49e34acb8b0abb796527923df349d8acf5fbdf85f32fd7d4a227d61e38166b"
+        }
+    },
+    "installer": {
+        "args": [
+            "TARGETDIR=\"$dir\"",
+            "INSTALLDIR=\"$dir\""
+        ]
+    },
+    "uninstaller": {
+        "script": "iex \"$env:SystemRoot\\System32\\msiexec.exe /x '{45B3032F-22CC-40CD-9E97-4DA7095FA5A2}'\""
+    },
+    "bin": [
+        "putty.exe",
+        "puttygen.exe",
+        "pscp.exe",
+        "pageant.exe",
+        "psftp.exe",
+        "plink.exe"
+    ],
+    "checkver": "The latest version is ([\\d\\.]+)\\.",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-$version-installer.msi",
+                "hash": {
+                    "url": "https://the.earth.li/~sgtatham/putty/$version/sha512sums",
+                    "find": "([a-fA-F0-9]+)\\s+\\*?(?:w64/$basename)"
+                }
+            },
+            "32bit": {
+                "url": "https://the.earth.li/~sgtatham/putty/latest/w32/putty-$version-installer.msi",
+                "hash": {
+                    "url": "https://the.earth.li/~sgtatham/putty/$version/sha512sums",
+                    "find": "([a-fA-F0-9]+)\\s+\\*?(?:w32/$basename)"
+                }
+            }
+        }
+    }
+}

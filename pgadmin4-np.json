@@ -1,9 +1,9 @@
 {
     "homepage": "https://www.pgadmin.org",
     "description": "pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL.",
-    "version": "4.2",
-    "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.2/windows/pgadmin4-4.2-x86.exe",
-    "hash": "f15b11f1a6d012052e2520e9cea8760fccdf7123271a7eb6082f3e570e5984cd",
+    "version": "4.3",
+    "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.3/windows/pgadmin4-4.3-x86.exe",
+    "hash": "933622bcc59586e112dd8a07e4f8981ebe30f31600c98fdaa389d71f790252f8",
     "bin": [
         "runtime\\psql.exe",
         "runtime\\pgAdmin4.exe",

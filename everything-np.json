@@ -1,15 +1,15 @@
 {
     "homepage": "https://www.voidtools.com/",
     "license": "https://www.voidtools.com/License.txt",
-    "version": "1.4.1.932",
+    "version": "1.4.1.935",
     "architecture": {
         "64bit": {
-            "url": "http://www.voidtools.com/Everything-1.4.1.932.x64-Setup.exe",
-            "hash": "4b6553bc551f21aa93214944a7aa6a2fefe954aeeb47cd2b8ff06eca476040e2"
+            "url": "http://www.voidtools.com/Everything-1.4.1.935.x64-Setup.exe",
+            "hash": "cfe25b67fa1ba0d32d8f9776cb226b38e651de770f5b35c6a3f5f36a59dd3e92"
         },
         "32bit": {
-            "url": "http://www.voidtools.com/Everything-1.4.1.932.x86-Setup.exe",
-            "hash": "5e85a51ad928350bf1464493d55915c4500b1dd7db256ddcf360240a86d1871b"
+            "url": "http://www.voidtools.com/Everything-1.4.1.935.x86-Setup.exe",
+            "hash": "07ec4ed8031a33e4d34b6eb9da65bb85c26d32e9297c4b28e948c7c7397dbda0"
         }
     },
     "installer": {
