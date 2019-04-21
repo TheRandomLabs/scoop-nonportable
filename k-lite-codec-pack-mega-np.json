@@ -1,9 +1,9 @@
 {
     "homepage": "https://codecguide.com",
     "description": "The Standard variant of the codec pack is what we recommend for the average user. It contains the advanced player MPC-HC plus all the essential codecs needed for multimedia playback.",
-    "version": "14.8.4",
-    "url": "https://files3.codecguide.com/K-Lite_Codec_Pack_1484_Mega.exe#/klite_setup.exe",
-    "hash": "972cb907a481b09541a42597c922667d34d0131092390f22c20cd72983c34d92",
+    "version": "14.9.0",
+    "url": "https://files3.codecguide.com/K-Lite_Codec_Pack_1490_Mega.exe#/klite_setup.exe",
+    "hash": "358b1691a3e5571602a8a44275e5089497763d85fc21591974c42782627f11c0",
     "installer": {
         "file": "klite_setup.exe",
         "args": [
