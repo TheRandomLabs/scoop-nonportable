@@ -22,9 +22,9 @@
     },
     "checkver": {
         "url": "http://www.jrsoftware.org/isdl.php",
-        "re": "innosetup-([\\d.]+)-unicode\\.exe"
+        "re": "innosetup-([\\d.]+)\\.exe"
     },
     "autoupdate": {
-        "url": "http://www.jrsoftware.org/download.php/is-unicode.exe#innosetup-$version-unicode.exe"
+        "url": "http://www.jrsoftware.org/download.php/is.exe#innosetup-$version.exe"
     }
 }
