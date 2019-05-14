@@ -1,0 +1,33 @@
+{
+    "homepage": "http://www.github.com/billziss-gh/sshfs-win/",
+    "description": "SSHFS For Windows",
+    "version": "2.7.17334",
+    "license": "GPL-2.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v2.7.17334/sshfs-win-2.7.17334-x64.msi",
+            "hash": "sha1:8b8c5bb43e0e7dad7334b4ad9f40742e17611050"
+        },
+        "32bit": {
+            "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v2.7.17334/sshfs-win-2.7.17334-x32.msi",
+            "hash": "sha1:0dfdf4f14d3555a0d5b90b84db586cce2bf6fa43"
+        }
+    },
+    "depends": {
+        "winfsp-np": "winfsp-np"
+    },
+    "checkver": {
+        "url": "https://github.com/billziss-gh/sshfs-win/releases/latest",
+        "re": "v(?<version>[\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v$matchVersion/sshfs-win-$matchVersion-x64.msi"
+            },
+            "32bit": {
+                "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v$matchVersion/sshfs-win-$matchVersion-x86.msi"
+            }
+        }
+    }
+}
