@@ -6,11 +6,11 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v2.7.17334/sshfs-win-2.7.17334-x64.msi",
-            "hash": "sha1:8b8c5bb43e0e7dad7334b4ad9f40742e17611050"
+            "hash": "246b7caa8c9b66c44aff7629da0a6767d405a5d78b7b81f429a5141c124da1e1"
         },
         "32bit": {
-            "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v2.7.17334/sshfs-win-2.7.17334-x32.msi",
-            "hash": "sha1:0dfdf4f14d3555a0d5b90b84db586cce2bf6fa43"
+            "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v2.7.17334/sshfs-win-2.7.17334-x86.msi",
+            "hash": "77a201b1623a34aff40f7c26d916ca761bda23c7e54557e6769bd9f9c0062d25"
         }
     },
     "depends": {
@@ -18,15 +18,15 @@
     },
     "checkver": {
         "url": "https://github.com/billziss-gh/sshfs-win/releases/latest",
-        "re": "v(?<version>[\\d.]+)"
+        "re": "v(?<short>[\\d.]+)/sshfs-win-(?<version>[\\d.]+).*\\.msi"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v$matchVersion/sshfs-win-$matchVersion-x64.msi"
+                "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v$matchShort/sshfs-win-$matchVersion-x64.msi"
             },
             "32bit": {
-                "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v$matchVersion/sshfs-win-$matchVersion-x86.msi"
+                "url": "https://github.com/billziss-gh/sshfs-win/releases/download/v$matchShort/sshfs-win-$matchVersion-x86.msi"
             }
         }
     }

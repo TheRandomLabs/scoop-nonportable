@@ -3,8 +3,8 @@
     "description": "WinFsp attempts to ease the task of writing a new file system for Windows in the same way that FUSE has done so for UNIX.",
     "version": "1.4.19049",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/billziss-gh/winfsp/releases/download/v1.4/winfsp-1.4.19016.msi",
-    "hash": "sha1:7213869e25b0a8335f0bf661a0e9ed24115cca11",
+    "url": "https://github.com/billziss-gh/winfsp/releases/download/v1.4.19049/winfsp-1.4.19049.msi",
+    "hash": "3c6df9f7bb505d6796e886efcfc19dcf25d76053832f139bc2f2627be0fa8324",
     "checkver": {
         "url": "https://github.com/billziss-gh/winfsp/releases/latest",
         "re": "v(?<short>[\\d.]+)/winfsp-(?<version>[\\d.]+).*\\.msi"
