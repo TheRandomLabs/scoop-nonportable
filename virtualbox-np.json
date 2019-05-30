@@ -24,11 +24,13 @@
         "re": "VirtualBox-(?<version>[\\d.]+)-(?<revision>[\\d]+)-Win.exe"
     },
     "autoupdate": {
-        "64bit": {
-            "url": "http://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/VBoxSetup.exe",
-            "hash": {
-                "url": "https://www.virtualbox.org/download/hashes/$version/SHA256SUMS"
+        "architecture": {
+            "64bit": {
+                "url": "http://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/VBoxSetup.exe"
             }
+        },
+        "hash": {
+            "url": "https://www.virtualbox.org/download/hashes/$version/SHA256SUMS"
         }
     }
 }
