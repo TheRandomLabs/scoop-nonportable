@@ -20,9 +20,7 @@
     },
     "uninstaller": {
         "file": "Uninstall.exe",
-        "args": [
-            "/S"
-        ]
+        "args": "/S"
     },
     "bin": "Everything.exe",
     "checkver": "Download Everything ([\\d.]+)",

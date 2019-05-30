@@ -16,9 +16,7 @@
     },
     "uninstaller": {
         "file": "uninst-nsis.exe",
-        "args": [
-            "/S"
-        ]
+        "args": "/S"
     },
     "checkver": {
         "url": "http://nsis.sourceforge.net/Main_Page",

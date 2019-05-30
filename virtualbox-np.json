@@ -26,7 +26,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "http://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/VBoxSetup.exe"
+                "url": "https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/VBoxSetup.exe"
             }
         },
         "hash": {
