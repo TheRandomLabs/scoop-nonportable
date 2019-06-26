@@ -1,0 +1,27 @@
+{
+    "version": "5.0.0-12606690",
+    "description": "VMware Horizon Client for Windows allows you to connect to your VMware Horizon virtual desktop.",
+    "homepage": "https://www.vmware.com/products/horizon.html",
+    "architecture": {
+        "64bit": {
+            "url": "https://download3.vmware.com/software/view/viewclients/CART20FQ1/VMware-Horizon-Client-5.0.0-12606690.exe",
+            "hash": "92f447bfef2efc193e682c4d95bbd1cf137be5d040b7ba7f4e752107e94b9fd6",
+            "installer": {
+                "script": [
+                    "Start-Process cmd -Verb RunAs \"/c $dir\\VMware-Horizon-Client-$version.exe /install /norestart /silent INSTALLDIR=\"\"$dir\\files\"\" AUTO_UPDATE_ENABLED=0\" -Wait -WindowStyle Hidden"
+                ]
+            },
+            "uninstaller": {
+                "script": [
+                    "Start-Process cmd -Verb RunAs \"/c $dir\\VMware-Horizon-Client-$version.exe /uninstall /norestart /silent\" -Wait -WindowStyle Hidden"
+                ]
+            },
+            "shortcuts": [
+                [
+                    "files\\vmware-view.exe",
+                    "VMware Horizon Client"
+                ]
+            ]
+        }
+    }
+}
