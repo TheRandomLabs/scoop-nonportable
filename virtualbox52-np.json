@@ -2,9 +2,9 @@
     "homepage": "https://www.virtualbox.org/wiki/Download_Old_Builds_5_2",
     "description": "Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.",
     "license": "GPL-2.0-only",
-    "version": "5.2.30",
-    "url": "http://download.virtualbox.org/virtualbox/5.2.30/VirtualBox-5.2.30-130521-Win.exe#/VBox52Setup.exe",
-    "hash": "2d39e6c895d63269ecabfc40378a34f4d34403e20029b7bf57fe43913e699c67",
+    "version": "5.2.32",
+    "url": "http://download.virtualbox.org/virtualbox/5.2.32/VirtualBox-5.2.32-132073-Win.exe#/VBox52Setup.exe",
+    "hash": "3af9863b93eaa59e2286fe0692cc447f930dbf6592279e3aff89faf0fe9e30ab",
     "installer": {
         "script": "Start-Process cmd -Verb Runas \"/c $dir\\VBox52Setup.exe --msiparams INSTALLDIR=$dir VBOX_START=0 REBOOT=ReallySuppress --silent\" -Wait -WindowStyle hidden"
     },
