@@ -19,6 +19,30 @@
             "Start-Process cmd -Verb Runas \"/c msiexec /x $id /qn\" -Wait -WindowStyle hidden"
         ]
     },
+    "bin": [
+        "VBoxBalloonCtrl.exe",
+        "VBoxBugReport.exe",
+        "VBoxDTrace.exe",
+        "VBoxExtPackHelperApp.exe",
+        "VBoxHeadless.exe",
+        "vbox-img.exe",
+        "VBoxManage.exe",
+        "VBoxNetDHCP.exe",
+        "VBoxNetNAT.exe",
+        "VBoxSDL.exe",
+        "VBoxSDS.exe",
+        "VBoxSVC.exe",
+        "VBoxTestOGL.exe",
+        "VBoxWebSrv.exe",
+        "VirtualBox.exe",
+        "VirtualBoxVM.exe"
+    ],
+    "shortcuts": [
+        [
+            "VirtualBox.exe",
+            "VirtualBox"
+        ]
+    ],
     "checkver": {
         "url": "https://update.virtualbox.org/query.php?platform=WINDOWS_64BITS_GENERIC&version=6.0.0",
         "re": "VirtualBox-(?<version>[\\d.]+)-(?<revision>[\\d]+)-Win.exe"
