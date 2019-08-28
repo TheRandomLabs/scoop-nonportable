@@ -15,6 +15,28 @@
             "Start-Process cmd -Verb Runas \"/c msiexec /x $id /qn\" -Wait -WindowStyle hidden"
         ]
     },
+    "bin": [
+        "VBoxBalloonCtrl.exe",
+        "VBoxBugReport.exe",
+        "VBoxDTrace.exe",
+        "VBoxExtPackHelperApp.exe",
+        "VBoxHeadless.exe",
+        "vbox-img.exe",
+        "VBoxManage.exe",
+        "VBoxNetDHCP.exe",
+        "VBoxNetNAT.exe",
+        "VBoxSDL.exe",
+        "VBoxSVC.exe",
+        "VBoxTestOGL.exe",
+        "VBoxWebSrv.exe",
+        "VirtualBox.exe"
+    ],
+    "shortcuts": [
+        [
+            "VirtualBox.exe",
+            "VirtualBox"
+        ]
+    ],
     "checkver": "VirtualBox-(?<version>[\\d.]+)-(?<revision>\\d+)-Win.exe",
     "autoupdate": {
         "url": "http://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/VBox52Setup.exe",
