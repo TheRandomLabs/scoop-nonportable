@@ -5,9 +5,9 @@
         "url": "https://www.teamviewer.com/en/eula/"
     },
     "description": "Software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.",
-    "version": "14.4.2669",
+    "version": "14.5.5819",
     "url": "https://dl.teamviewer.com/download/TeamViewer_Setup.exe#/setup.exe",
-    "hash": "df26627cc29716b65a3ed72f78d59808244f9bc4ad2624657ddbee79d2baa422",
+    "hash": "ed9ebe66a80f5f762c9054b5fc40202a17a50b2bc6a67682a29a5b88926c651b",
     "installer": {
         "script": [
             "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S', '/D=$dir', '/norestart') -RunAs | Out-Null",
