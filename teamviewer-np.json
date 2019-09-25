@@ -7,7 +7,7 @@
     "description": "Software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.",
     "version": "14.5.5819",
     "url": "https://dl.teamviewer.com/download/TeamViewer_Setup.exe#/setup.exe",
-    "hash": "ed9ebe66a80f5f762c9054b5fc40202a17a50b2bc6a67682a29a5b88926c651b",
+    "hash": "54b9f36bbe9f19d7ec3ca87917040a0b04dc75119ad70db7b2b04766e956ff5e",
     "installer": {
         "script": [
             "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S', '/D=$dir', '/norestart') -RunAs | Out-Null",
