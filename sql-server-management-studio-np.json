@@ -1,9 +1,9 @@
 {
     "homepage": "https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms",
     "description": "An integrated environment for SQL Server infrastructure administration and T-SQL development.",
-    "version": "15.0.18178.0",
-    "url": "https://go.microsoft.com/fwlink/?linkid=2104251#/SSMS-Setup-ENU.exe",
-    "hash": "f447a3e10d1326ca1f3e50a61d81348554b327bf9af2129c5ed80cea651e2b57",
+    "version": "15.0.18183.0",
+    "url": "https://download.microsoft.com/download/1/9/8/1986c4a9-480b-4a46-8088-2778e0abcc8a/SSMS-Setup-ENU.exe",
+    "hash": "ee0b1e5525f991f44c657c98d998431000d3b024b97c8a65c360036a90f3e41b",
     "installer": {
         "script": [
             "$log = \"$dir\\SSMS-Setup-ENU-Install.log\"",
