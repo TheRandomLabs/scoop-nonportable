@@ -1,7 +1,7 @@
 {
     "homepage": "https://www.teamviewer.com",
     "license": {
-        "identifier":"Shareware",
+        "identifier": "Shareware",
         "url": "https://www.teamviewer.com/en/eula/"
     },
     "description": "Software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.",

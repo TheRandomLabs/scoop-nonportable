@@ -29,14 +29,14 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.x64.exe"
+                "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.x64.exe"
             },
             "32bit": {
-                "url": "https://notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.exe"
+                "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.exe"
             }
         },
         "hash": {
-            "url": "https://notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.checksums.sha256"
+            "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.checksums.sha256"
         }
     }
 }
