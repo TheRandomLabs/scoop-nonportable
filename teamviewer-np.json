@@ -1,13 +1,13 @@
 {
     "homepage": "https://www.teamviewer.com",
     "license": {
-        "identifier":"Shareware",
+        "identifier": "Shareware",
         "url": "https://www.teamviewer.com/en/eula/"
     },
     "description": "Software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.",
-    "version": "14.5.5819",
+    "version": "14.6.4835",
     "url": "https://dl.teamviewer.com/download/TeamViewer_Setup.exe#/setup.exe",
-    "hash": "54b9f36bbe9f19d7ec3ca87917040a0b04dc75119ad70db7b2b04766e956ff5e",
+    "hash": "b3303bb6624bfbc08a0c975a013f8254776784292cde08f540b7f0857ebbaaaa",
     "installer": {
         "script": [
             "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S', '/D=$dir', '/norestart') -RunAs | Out-Null",

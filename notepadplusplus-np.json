@@ -1,19 +1,19 @@
 {
     "homepage": "https://notepad-plus-plus.org/",
-    "version": "7.7.1",
+    "version": "7.8",
     "license": "GPL",
     "notes": "The following page explains how to add explorer context menu entries for notepad++. http://docs.notepad-plus-plus.org/index.php/Explorer_Context_Menu",
     "architecture": {
         "64bit": {
-            "url": "https://notepad-plus-plus.org/repository/7.x/7.7.1/npp.7.7.1.Installer.x64.exe",
-            "hash": "0ef89d2a9c9b15cd4aab3f3772f62cbebb54c3856bc1bd9a4a5fb3180ea6140e"
+            "url": "http://download.notepad-plus-plus.org/repository/7.x/7.8/npp.7.8.Installer.x64.exe",
+            "hash": "ddaf2a899b3cfc81b814ed24bab4c42386853444c2c50d7bb676127b04ffea9a"
         },
         "32bit": {
-            "url": "https://notepad-plus-plus.org/repository/7.x/7.7.1/npp.7.7.1.Installer.exe",
-            "hash": "6787c524b0ac30a698237ffb035f932d7132343671b8fe8f0388ed380d19a51c"
+            "url": "http://download.notepad-plus-plus.org/repository/7.x/7.8/npp.7.8.Installer.exe",
+            "hash": "f2bb733a6afcff34e8e72cbeb3a200dd223e732e2e1275322532635cdf066027"
         }
     },
-    "checkver": "Current Version:.*?<span>(.*?)</span>",
+    "checkver": "<strong>Current Version (.*?)</strong>",
     "bin": "notepad++.exe",
     "installer": {
         "args": [
@@ -29,14 +29,14 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.x64.exe"
+                "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.x64.exe"
             },
             "32bit": {
-                "url": "https://notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.exe"
+                "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.exe"
             }
         },
         "hash": {
-            "url": "https://notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.checksums.sha256"
+            "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.checksums.sha256"
         }
     }
 }
