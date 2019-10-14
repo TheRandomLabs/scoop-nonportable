@@ -19,9 +19,10 @@
         "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn') | Out-Null"
     },
     "checkver": {
-        "github": "https://github.com/billziss-gh/winfsp"
+        "url": "https://github.com/billziss-gh/winfsp/releases/latest",
+        "re": "v(?<short>[\\d.]+)/winfsp-(?<version>[\\d.]+).*\\.msi"
     },
     "autoupdate": {
-        "url": "https://github.com/billziss-gh/winfsp/releases/download/v$version/winfsp-$version.msi#/setup.msi_"
+        "url": "https://github.com/billziss-gh/winfsp/releases/download/v$matchShort/winfsp-$matchVersion.msi#/setup.msi_"
     }
 }
