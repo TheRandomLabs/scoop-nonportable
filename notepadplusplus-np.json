@@ -13,7 +13,7 @@
             "hash": "6787c524b0ac30a698237ffb035f932d7132343671b8fe8f0388ed380d19a51c"
         }
     },
-    "checkver": "Current Version:.*?<span>(.*?)</span>",
+    "checkver": "<strong>Current Version (.*?)</strong>",
     "bin": "notepad++.exe",
     "installer": {
         "args": [
