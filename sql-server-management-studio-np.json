@@ -1,0 +1,36 @@
+{
+    "homepage": "https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms",
+    "description": "An integrated environment for SQL Server infrastructure administration and T-SQL development.",
+    "version": "15.0.18183.0",
+    "url": "https://download.microsoft.com/download/1/9/8/1986c4a9-480b-4a46-8088-2778e0abcc8a/SSMS-Setup-ENU.exe",
+    "hash": "ee0b1e5525f991f44c657c98d998431000d3b024b97c8a65c360036a90f3e41b",
+    "installer": {
+        "script": [
+            "$log = \"$dir\\SSMS-Setup-ENU-Install.log\"",
+            "$bin = \"$dir\\SSMS-Setup-ENU.exe\"",
+            "$args = \"/c $bin /install /quiet /norestart /log $log SSMSInstallRoot=$dir\"",
+            "# 3010 exit code means successful, but reboot pending",
+            "$success = @(0, 3010)",
+            "$rc = (Start-Process cmd -Verb Runas \"$args\" -Wait -WindowStyle hidden -PassThru).ExitCode",
+            "if ($rc -notin $success) { abort \"Install failed, see log for details:`n$log\" }"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "$log = \"$dir\\SSMS-Setup-ENU-Uninstall.log\"",
+            "$bin = \"$dir\\SSMS-Setup-ENU.exe\"",
+            "$args = \"/c $bin /uninstall /quiet /norestart /log $log\"",
+            "$success = @(0, 3010)",
+            "$rc = (Start-Process cmd -Verb Runas \"$args\" -Wait -WindowStyle hidden -PassThru).ExitCode",
+            "if ($rc -notin $success) { abort \"Uninstall failed, see log for details:`n$log\" }"
+        ]
+    },
+    "shortcuts": [
+        [
+            "Common7\\IDE\\Ssms.exe",
+            "Microsoft SQL Server Management Studio 18.3"
+        ]
+    ]
+}
+
+
