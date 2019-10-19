@@ -11,7 +11,7 @@
     },
     "installer": {
         "script": [
-            "Start-Process -Wait cmd \"/c call `\"$dir\\VBoxSetup.exe`\" --msiparams INSTALLDIR=`\"$dir`\" VBOX_START=0 REBOOT=ReallySuppress --silent && icacls `\"$dir`\" /grant Everyone:F /T\" -Verb RunAs",
+            "Start-Process -Wait -WindowStyle Hidden cmd \"/c call `\"$dir\\VBoxSetup.exe`\" --msiparams INSTALLDIR=`\"$dir`\" VBOX_START=0 REBOOT=ReallySuppress --silent && icacls `\"$dir`\" /grant Everyone:F /T\" -Verb RunAs",
             "Remove-Item \"$dir\\VBoxSetup.exe\"",
             "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Oracle VM VirtualBox.lnk\"",
             "Remove-Item -Recurse \"$env:PROGRAMDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Oracle VM VirtualBox\""
@@ -20,7 +20,7 @@
     "uninstaller": {
         "script": [
             "$id = wmic product where \"\"\"name like 'Oracle VM VirtualBox%'\"\"\" get IdentifyingNumber | find /i \"\"\"-\"\"\"",
-            "Start-Process -Wait cmd \"/c msiexec /x $id /qn && icacls `\"$dir`\" /grant Everyone:F /T\" -Verb RunAs"
+            "Start-Process -Wait -WindowStyle Hidden cmd \"/c msiexec /x $id /qn && icacls `\"$dir`\" /grant Everyone:F /T\" -Verb RunAs"
         ]
     },
     "bin": [
