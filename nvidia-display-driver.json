@@ -3,7 +3,7 @@
     "description": "NVIDIA display driver.",
     "homepage": "https://www.nvidia.com/Download/index.aspx",
     "license": "Freeware",
-    "notes": "This only installs the NVIDIA display driver. Running `scoop uninstall nvidia-display-driver` will only remove the local manifest.",
+    "notes": "This is only an installer for the NVIDIA display driver. Running `scoop uninstall nvidia-display-driver` will only remove the local manifest.",
     "architecture": {
         "64bit": {
             "url": "https://us.download.nvidia.com/Windows/436.48/436.48-desktop-win10-64bit-international-whql.exe#/dl.7z",
