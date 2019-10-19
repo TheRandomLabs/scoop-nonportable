@@ -1,7 +1,7 @@
 {
     "version": "436.48",
     "description": "NVIDIA display driver.",
-    "homepage": "https://www.nvidia.com/Download/index.aspx?lang=en-us",
+    "homepage": "https://www.nvidia.com/Download/index.aspx",
     "license": "Freeware",
     "notes": "This only installs the NVIDIA display driver. Running `scoop uninstall nvidia-display-driver` will only remove the local manifest.",
     "architecture": {
