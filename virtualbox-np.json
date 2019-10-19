@@ -1,8 +1,8 @@
 {
-    "homepage": "https://www.virtualbox.org/",
-    "description": "Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.",
-    "license": "GPL-2.0-only",
     "version": "6.0.14",
+    "description": "Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.",
+    "homepage": "https://www.virtualbox.org/",
+    "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
             "url": "https://download.virtualbox.org/virtualbox/6.0.14/VirtualBox-6.0.14-133895-Win.exe#/VBoxSetup.exe",
@@ -10,13 +10,17 @@
         }
     },
     "installer": {
-        "script": "Start-Process cmd -Verb Runas \"/c $dir\\VBoxSetup.exe --msiparams INSTALLDIR=$dir VBOX_START=0 REBOOT=ReallySuppress --silent\" -Wait -WindowStyle hidden"
+        "script": [
+            "Start-Process -Wait cmd \"/c call `\"$dir\\VBoxSetup.exe`\" --msiparams INSTALLDIR=`\"$dir`\" VBOX_START=0 REBOOT=ReallySuppress --silent && icacls `\"$dir`\" /grant Everyone:F /T\" -Verb RunAs",
+            "Remove-Item \"$dir\\VBoxSetup.exe\"",
+            "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Oracle VM VirtualBox.lnk\"",
+            "Remove-Item -Recurse \"$env:PROGRAMDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Oracle VM VirtualBox\""
+        ]
     },
-    "post_install": "remove-item \"$dir\\VBoxSetup.exe\"",
     "uninstaller": {
         "script": [
             "$id = wmic product where \"\"\"name like 'Oracle VM VirtualBox%'\"\"\" get IdentifyingNumber | find /i \"\"\"-\"\"\"",
-            "Start-Process cmd -Verb Runas \"/c msiexec /x $id /qn\" -Wait -WindowStyle hidden"
+            "Start-Process -Wait cmd \"/c msiexec /x $id /qn && icacls `\"$dir`\" /grant Everyone:F /T\" -Verb RunAs"
         ]
     },
     "bin": [
@@ -45,7 +49,7 @@
     ],
     "checkver": {
         "url": "https://update.virtualbox.org/query.php?platform=WINDOWS_64BITS_GENERIC&version=6.0.0",
-        "re": "VirtualBox-(?<version>[\\d.]+)-(?<revision>[\\d]+)-Win.exe"
+        "regex": "VirtualBox-(?<version>[\\d.]+)-(?<revision>[\\d]+)-Win.exe"
     },
     "autoupdate": {
         "architecture": {
