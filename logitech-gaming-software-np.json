@@ -17,7 +17,7 @@
         }
     },
     "installer": {
-        "script": "Start-Process -Wait \"$dir\\LGS_$(version)_x$(if ($architecture -eq '64bit') { '64' } else { '86' })_Logitech.exe\" /S -Verb RunAs"
+        "script": "Start-Process -Wait \"$dir\\LGS_$($version)_x$(if ($architecture -eq '64bit') { '64' } else { '86' })_Logitech.exe\" /S -Verb RunAs"
     },
     "uninstaller": {
         "script": [
