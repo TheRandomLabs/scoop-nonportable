@@ -8,16 +8,16 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://download01.logi.com/web/ftp/pub/techsupport/gaming/LGS_9.02.65_x64_Logitech.exe",
+            "url": "https://download01.logi.com/web/ftp/pub/techsupport/gaming/LGS_9.02.65_x64_Logitech.exe#/setup.exe",
             "hash": "e037727f2e571f41864d93fbcc094e124eda3e1dcd2d56973f1f65c5a577bf55"
         },
         "32bit": {
-            "url": "https://download01.logi.com/web/ftp/pub/techsupport/gaming/LGS_9.02.65_x86_Logitech.exe",
+            "url": "https://download01.logi.com/web/ftp/pub/techsupport/gaming/LGS_9.02.65_x86_Logitech.exe#/setup.exe",
             "hash": "fd70176ddeeee0a24bbaceef67a67004debf53ed437db7d7c06786f8d4fd8eeb"
         }
     },
     "installer": {
-        "script": "Start-Process -Wait \"$dir\\LGS_$($version)_x$(if ($architecture -eq '64bit') { '64' } else { '86' })_Logitech.exe\" /S -Verb RunAs"
+        "script": "Start-Process -Wait \"$dir\\setup.exe\" /S -Verb RunAs"
     },
     "uninstaller": {
         "script": [
