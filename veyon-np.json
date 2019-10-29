@@ -1,0 +1,53 @@
+{
+    "homepage": "https://veyon.io/",
+    "description": "Computer monitoring / classroom management software.",
+    "version": "4.3.0.0",
+    "license": "GPL-2.0-or-later",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/veyon/veyon/releases/download/v4.3.0/veyon-4.3.0.0-win32-setup.exe#/installer.exe",
+            "hash": "67e7b3fa6af2984fa3a0a6818590689f21e4031add367551ddb1987179689db5"
+        },
+        "64bit": {
+            "url": "https://github.com/veyon/veyon/releases/download/v4.3.0/veyon-4.3.0.0-win64-setup.exe#/installer.exe",
+            "hash": "aaae2d7bbe06422a9760190ffa4546d93693bc5f1577e138b3b834aba64710a3"
+        }
+    },
+    "installer": {
+        "script": [
+            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -RunAs | Out-Null",
+            "Remove-Item \"$dir\\installer.exe\""
+        ]
+    },
+    "uninstaller": {
+        "script": "Start-Process \"$dir\\uninstall.exe\" -ArgumentList @('/S') -Verb RunAs -Wait | Out-Null"
+    },
+    "bin": [
+        [
+            "veyon-cli.exe",
+            "veyon-cli"
+        ],
+        [
+            "veyon-master.exe",
+            "veyon-master"
+        ],
+        [
+            "veyon-configurator.exe",
+            "veyon-configurator"
+        ]
+    ],
+    "checkver": {
+        "url": "https://veyon.io/download/",
+        "regex": "veyon-([\\d.]+)-win64-setup.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/veyon/veyon/releases/download/v$majorVersion.$minorVersion.$patchVersion/veyon-$version-win32-setup.exe#/installer.exe"
+            },
+            "64bit": {
+                "url": "https://github.com/veyon/veyon/releases/download/v$majorVersion.$minorVersion.$patchVersion/veyon-$version-win64-setup.exe#/installer.exe"
+            }
+        }
+    }
+}
