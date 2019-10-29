@@ -1,38 +1,37 @@
 {
     "homepage": "https://notepad-plus-plus.org/",
-    "version": "7.8",
+    "version": "7.8.1",
     "license": "GPL",
-    "notes": "The following page explains how to add explorer context menu entries for notepad++. http://docs.notepad-plus-plus.org/index.php/Explorer_Context_Menu",
     "architecture": {
         "64bit": {
-            "url": "http://download.notepad-plus-plus.org/repository/7.x/7.8/npp.7.8.Installer.x64.exe",
-            "hash": "ddaf2a899b3cfc81b814ed24bab4c42386853444c2c50d7bb676127b04ffea9a"
+            "url": "http://download.notepad-plus-plus.org/repository/7.x/7.8.1/npp.7.8.1.Installer.x64.exe#/installer.exe",
+            "hash": "51ea006fac7c7cf88dda19133fd2e701d53a774d0f9a6f094178db40424e2bd1"
         },
         "32bit": {
-            "url": "http://download.notepad-plus-plus.org/repository/7.x/7.8/npp.7.8.Installer.exe",
-            "hash": "f2bb733a6afcff34e8e72cbeb3a200dd223e732e2e1275322532635cdf066027"
+            "url": "http://download.notepad-plus-plus.org/repository/7.x/7.8.1/npp.7.8.1.Installer.exe#/installer.exe",
+            "hash": "d99718a113e86bd874ad4aac3557a7190e8008352eb758716ed568ae3bf6b0e9"
         }
     },
     "checkver": "<strong>Current Version (.*?)</strong>",
     "bin": "notepad++.exe",
     "installer": {
-        "args": [
-            "/S",
-            "/allowAppDataPluginsLoading",
-            "/D=$dir"
-        ]
+        "script": "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -RunAs | Out-Null"
     },
     "uninstaller": {
-        "file": "uninstall.exe",
-        "args": "/S"
+        "script": [
+            "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList @('/S') -RunAs | Out-Null",
+            "Start-Process taskkill -ArgumentList @('/F', '/IM', 'explorer.exe') -Wait",
+            "explorer",
+            "Start-Sleep -Seconds 2"
+        ]
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.x64.exe"
+                "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.x64.exe#/installer.exe"
             },
             "32bit": {
-                "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.exe"
+                "url": "http://download.notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.Installer.exe#/installer.exe"
             }
         },
         "hash": {
