@@ -1,0 +1,31 @@
+{
+    "homepage": "https://www.bluestacks.com/",
+    "description": "Android emulator.",
+    "version": "4.140",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.bluestacks.com/tw/terms-and-privacy.html"
+    },
+    "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x64#/dl.exe",
+    "hash": "10e3396909badb942bb43dae7ef3c47e51f8466c584a3cf9135ecabe89cec75d",
+    "installer": {
+        "script": [
+            "Invoke-ExternalCommand 7z -ArgumentList @('x', \"$dir\\dl.exe\", \"-o$dir\\installer\") | Out-Null",
+            "Invoke-ExternalCommand \"$dir\\installer\\BlueStacksInstaller.exe\" -ArgumentList @('-s') -RunAs | Out-Null",
+            "Remove-Item \"$dir\\installer\", \"$dir\\dl.exe\" -Force -Recurse"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "$uninstaller = (Get-Item Env:localappdata).Value+'\\temp\\BlueStacksUninstaller.exe'",
+            "Invoke-ExternalCommand \"$uninstaller\" -ArgumentList @('-s') -RunAs | Out-Null"
+        ]
+    },
+    "checkver": {
+        "url": "https://support.bluestacks.com/hc/en-us/articles/360021469391-Release-Notes",
+        "regex": "BlueStacks ([\\d.]+) Release Notes"
+    },
+    "autoupdate": {
+        "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x64#/dl.exe"
+    }
+}
