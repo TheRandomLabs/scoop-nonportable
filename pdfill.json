@@ -1,0 +1,26 @@
+{
+	"version": "14.0Build2",
+	"homepage": "http://www.pdfill.com/",
+	"description": "Free PDF tools",
+	"license": "Freeware",
+	"notes": "This is only an installer for the PDFill tools. Running `scoop uninstall pdfill` will only unregister it from scoop.",
+	"url": "http://www.plotsoft.com/download/PDFill_FREE_PDF_Editor_Basic.exe#/pdfill-setup.exe",
+	"hash": "771926b5ef5fc906469cb03be1bfbfbe2ece7f01044c5fa3b484742df911edd7",
+	"depends": "main/ghostscript",
+	 "pre_install": [
+        "if (!(is_admin)) {",
+        "    error \"Administrator rights are required to install $app.\"",
+        "    exit 1",
+        "}"
+    ],
+	"installer": {
+        "file": "pdfill-setup.exe"
+	},
+	"checkver": {
+		"url": "http://www.pdfill.com/download.html",
+		"regex": "File Version:(\\s)(\\d)(\\d)(\\.)(\\d)(\\s*)(Build)(\\s*)(\\d)"
+	},
+	"autoupdate": {
+		"url": "http://www.plotsoft.com/download/PDFill_FREE_PDF_Editor_Basic.exe#/pdfill-setup.exe"
+	}
+}
