@@ -1,13 +1,13 @@
 {
-    "version": "436.48",
+    "version": "441.20",
     "description": "NVIDIA display driver.",
     "homepage": "https://www.nvidia.com/Download/index.aspx",
     "license": "Freeware",
     "notes": "This is only an installer for the NVIDIA display driver. Running `scoop uninstall nvidia-display-driver` will only remove the local manifest.",
     "architecture": {
         "64bit": {
-            "url": "https://us.download.nvidia.com/Windows/436.48/436.48-desktop-win10-64bit-international-whql.exe#/dl.7z",
-            "hash": "4c93d501331a3f96469f330809b7adefa9e65ae6c6edc63f0ef18f7205542f27"
+            "url": "https://us.download.nvidia.com/Windows/441.20/441.20-desktop-win10-64bit-international-whql.exe#/dl.7z",
+            "hash": "696bafbb02d8459bb61f15891801701a917af4c9892f16db56e1d5a7b3b35e56"
         }
     },
     "installer": {
@@ -20,8 +20,6 @@
             "Move-Item \"$dir\\extract\\Display.Driver\" -Destination \"$dir\\setup\"",
             "Move-Item \"$dir\\extract\\Display.Optimus\" -Destination \"$dir\\setup\"",
             "Move-Item \"$dir\\extract\\HDAudio\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\NV3DVision\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\NV3DVisionUSB.Driver\" -Destination \"$dir\\setup\"",
             "Move-Item \"$dir\\extract\\NVI2\" -Destination \"$dir\\setup\"",
             "Move-Item \"$dir\\extract\\PhysX\" -Destination \"$dir\\setup\"",
             "Move-Item \"$dir\\extract\\*.txt\" -Destination \"$dir\\setup\"",
