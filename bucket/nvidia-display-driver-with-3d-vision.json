@@ -12,10 +12,9 @@
     },
     "installer": {
         "script": [
-            "Remove-Item -ErrorAction Ignore -Recurse \"$dir\\extract\"",
-            "New-Item -Path \"$dir\\extract\" -ItemType Directory | Out-Null",
+            "New-Item \"$dir\\extract\" -ItemType Directory | Out-Null",
             "Move-Item \"$dir\\*\" -Destination \"$dir\\extract\"",
-            "New-Item -Path \"$dir\\setup\" -ItemType Directory | Out-Null",
+            "New-Item \"$dir\\setup\" -ItemType Directory | Out-Null",
             "# Move everything we want",
             "Move-Item \"$dir\\extract\\Display.Driver\" -Destination \"$dir\\setup\"",
             "Move-Item \"$dir\\extract\\Display.Optimus\" -Destination \"$dir\\setup\"",
@@ -27,12 +26,12 @@
             "Move-Item \"$dir\\extract\\*.txt\" -Destination \"$dir\\setup\"",
             "Move-Item \"$dir\\extract\\setup.*\" -Destination \"$dir\\setup\"",
             "# The installer will not run without these legal files",
-            "New-Item -Path \"$dir\\setup\\GFExperience\" -ItemType Directory | Out-Null",
+            "New-Item \"$dir\\setup\\GFExperience\" -ItemType Directory | Out-Null",
             "Move-Item \"$dir\\extract\\GFExperience\\PrivacyPolicy\" -Destination \"$dir\\setup\\GFExperience\"",
             "Move-Item \"$dir\\extract\\GFExperience\\EULA.html\" -Destination \"$dir\\setup\\GFExperience\"",
             "Move-Item \"$dir\\extract\\GFExperience\\FunctionalConsent*\" -Destination \"$dir\\setup\\GFExperience\"",
             "",
-            "& \"$dir\\setup\\setup.exe`\" -s -noreboot",
+            "Start-Process -Wait \"$dir\\setup\\setup.exe\" \"-s -noreboot\" -Verb RunAs",
             "Remove-Item -Recurse \"$dir\\extract\"",
             "Remove-Item -Recurse \"$dir\\setup\""
         ]
