@@ -1,7 +1,9 @@
 {
-    "homepage": "https://nodejs.org",
     "version": "13.1.0",
+    "description": "JavaScript runtime environment.",
+    "homepage": "https://nodejs.org",
     "license": "MIT",
+    "notes": "npm global prefix set to: $env:APPDATA\\npm",
     "architecture": {
         "64bit": {
             "url": "https://nodejs.org/dist/v13.1.0/node-v13.1.0-win-x64.7z",
@@ -14,20 +16,20 @@
             "extract_dir": "node-v13.1.0-win-x86"
         }
     },
-    "bin": [
-        "node.exe",
-        "npm.cmd"
-    ],
     "installer": {
-        "script": "add_first_in_path \"$env:APPDATA\\npm\" $global"
+        "script": [
+            "add_first_in_path \"$env:APPDATA\\npm\" $global",
+            "& \"$dir\\npm.cmd\" config set prefix \"$env:APPDATA\\npm\""
+        ]
     },
     "uninstaller": {
         "script": "remove_from_path \"$env:APPDATA\\npm\" $global"
     },
-    "checkver": {
-        "url": "https://nodejs.org/dist/latest/",
-        "re": "node-v([\\d.]+)-x86.msi"
-    },
+    "bin": [
+        "node.exe",
+        "npm.cmd"
+    ],
+    "checkver": "Download ([\\d.]+) Current",
     "autoupdate": {
         "architecture": {
             "64bit": {
