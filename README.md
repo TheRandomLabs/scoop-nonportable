@@ -1,4 +1,4 @@
-# Scoop Nonportable
+# scoop-nonportable
 
 A [Scoop](https://scoop.sh/) bucket for nonportable applications.
 
