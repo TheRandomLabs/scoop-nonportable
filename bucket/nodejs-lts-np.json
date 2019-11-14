@@ -1,0 +1,46 @@
+{
+    "homepage": "https://nodejs.org",
+    "version": "12.13.0",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://nodejs.org/dist/v12.13.0/node-v12.13.0-win-x64.7z",
+            "hash": "ca6cb0f7b0b8656f52aeb1d6e01726909a53ae4fc39076da1b3f66ab82e89a14",
+            "extract_dir": "node-v12.13.0-win-x64"
+        },
+        "32bit": {
+            "url": "https://nodejs.org/dist/v12.13.0/node-v12.13.0-win-x86.7z",
+            "hash": "38b6c8d1320646e50a2772cf1df8e700ff7a4021275415f30fd03c977f726079",
+            "extract_dir": "node-v12.13.0-win-x86"
+        }
+    },
+    "bin": [
+        "node.exe",
+        "npm.cmd"
+    ],
+    "installer": {
+        "script": "add_first_in_path \"$env:APPDATA\\npm\" $global"
+    },
+    "uninstaller": {
+        "script": "remove_from_path \"$env:APPDATA\\npm\" $global"
+    },
+    "checkver": {
+        "url": "https://nodejs.org/en/download/",
+        "re": "LTS Version: <strong>([\\d.]+)</strong>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x64.7z",
+                "extract_dir": "node-v$version-win-x64"
+            },
+            "32bit": {
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x86.7z",
+                "extract_dir": "node-v$version-win-x86"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHASUMS256.txt.asc"
+        }
+    }
+}
