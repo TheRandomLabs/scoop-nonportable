@@ -6,11 +6,15 @@
         "identifier": "Freeware",
         "url": "http://www.pdfill.com/license.html"
     },
-    "url": "http://www.plotsoft.com/download/PDFill_FREE_PDF_Editor_Basic.msi#/setup.msi_",
+	"url": "http://www.plotsoft.com/download/PDFill_FREE_PDF_Editor_Basic.exe#/pdfill-setup.exe",
+"pre_install": [
+        "if (!(is_admin)) {",
+        "    error \"Administrator rights are required to install $app.\"",
+        "    exit 1",
+        "}"
+    ],
+	"depends": "main/ghostscript",
     "installer": {
-        "script": "Start-Process -Wait msiexec \"/i `\"$dir\\setup.msi_`\" /qn\" -Verb RunAs"
-    },
-    "uninstaller": {
-        "script": "Start-Process -Wait msiexec \"/x `\"$dir\\setup.msi_`\" /qn\" -Verb RunAs"
+        "script": "Start-Process -Wait msiexec \"/i `\"$dir\\pdfill-setup.exe`\" /qn\" -Verb RunAs"
     }
 }
