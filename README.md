@@ -10,7 +10,7 @@ Pull requests are welcome!
 
 ## Benefits of nonportable applications
 
-The majority of applications in the "main" and "extras" buckets are portable. Portable applications keep all of their data in their installation directory, and this can cause several issues:
+The majority of applications in the other known buckets are portable. Portable applications keep all of their data in their installation directory, and this can cause several issues:
 
 * If a portable application is updated using Scoop, all data is lost unless persistent data is defined correctly in the manifest.
 * If a portable application is uninstalled using Scoop, all data is lost.
