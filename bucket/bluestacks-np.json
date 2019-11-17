@@ -1,24 +1,31 @@
 {
-    "homepage": "https://www.bluestacks.com/",
-    "description": "Android emulator.",
     "version": "4.140",
+    "description": "Android emulator",
+    "homepage": "https://www.bluestacks.com/",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.bluestacks.com/tw/terms-and-privacy.html"
     },
-    "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x64#/dl.exe",
-    "hash": "10e3396909badb942bb43dae7ef3c47e51f8466c584a3cf9135ecabe89cec75d",
+    "architecture": {
+        "64bit": {
+            "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x64#/setup.7z",
+            "hash": "10e3396909badb942bb43dae7ef3c47e51f8466c584a3cf9135ecabe89cec75d"
+        },
+        "32bit": {
+            "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x86#/setup.7z",
+            "hash": "cf7616af16d815ffd159fa0060bfb3cb49e11d44c9423008d7ee507842a95c94"
+        }
+    },
     "installer": {
-        "script": [
-            "Invoke-ExternalCommand 7z -ArgumentList @('x', \"$dir\\dl.exe\", \"-o$dir\\installer\") | Out-Null",
-            "Invoke-ExternalCommand \"$dir\\installer\\BlueStacksInstaller.exe\" -ArgumentList @('-s') -RunAs | Out-Null",
-            "Remove-Item \"$dir\\installer\", \"$dir\\dl.exe\" -Force -Recurse"
-        ]
+        "script": "Start-Process -Wait \"$dir\\BlueStacksInstaller.exe\" \"-s\" -Verb RunAs"
     },
     "uninstaller": {
         "script": [
-            "$uninstaller = (Get-Item Env:localappdata).Value+'\\temp\\BlueStacksUninstaller.exe'",
-            "Invoke-ExternalCommand \"$uninstaller\" -ArgumentList @('-s') -RunAs | Out-Null"
+            "$uninstaller = (Get-ItemProperty -ErrorAction Ignore \"HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\BlueStacks\" -Name UninstallString).UninstallString",
+            "if (-not $uninstaller) { $uninstaller = (Get-ItemProperty -ErrorAction Ignore \"HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\BlueStacks\" -Name UninstallString).UninstallString }",
+            "# Remove -tmp at the end",
+            "$uninstaller = $uninstaller.Substring(0, $uninstaller.Length - 5)",
+            "Start-Process -Wait \"$uninstaller\" \"-s\" -Verb RunAs"
         ]
     },
     "checkver": {
@@ -26,6 +33,13 @@
         "regex": "BlueStacks ([\\d.]+) Release Notes"
     },
     "autoupdate": {
-        "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x64#/dl.exe"
+        "architecture": {
+            "64bit": {
+                "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x64#/setup.7z"
+            },
+            "32bit": {
+                "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x86#/setup.7z"
+            }
+        }
     }
 }
