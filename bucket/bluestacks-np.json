@@ -1,5 +1,5 @@
 {
-    "version": "4.140",
+    "version": "nightly",
     "description": "Android emulator",
     "homepage": "https://www.bluestacks.com/",
     "license": {
@@ -8,12 +8,10 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x64#/setup.7z",
-            "hash": "10e3396909badb942bb43dae7ef3c47e51f8466c584a3cf9135ecabe89cec75d"
+            "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x64#/setup.7z"
         },
         "32bit": {
-            "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x86#/setup.7z",
-            "hash": "cf7616af16d815ffd159fa0060bfb3cb49e11d44c9423008d7ee507842a95c94"
+            "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x86#/setup.7z"
         }
     },
     "installer": {
@@ -27,19 +25,5 @@
             "$uninstaller = $uninstaller.Substring(0, $uninstaller.Length - 5)",
             "Start-Process -Wait \"$uninstaller\" \"-s\" -Verb RunAs"
         ]
-    },
-    "checkver": {
-        "url": "https://support.bluestacks.com/hc/en-us/articles/360021469391-Release-Notes",
-        "regex": "BlueStacks ([\\d.]+) Release Notes"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x64#/setup.7z"
-            },
-            "32bit": {
-                "url": "https://cloud.bluestacks.com/get_offline_download?os_arch=x86#/setup.7z"
-            }
-        }
     }
 }
