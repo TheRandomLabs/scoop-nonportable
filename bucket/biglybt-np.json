@@ -16,6 +16,10 @@
     "installer": {
         "args": "-q -dir '$dir'"
     },
+    "post_install": [
+        "Remove-Item 'C:\\Users\\Public\\Desktop\\BiglyBt.lnk'"
+        "Remove-Item 'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\BiglyBt.lnk'"
+    ],
     "uninstaller": {
         "file": "uninstall.exe",
         "args": "-q"
