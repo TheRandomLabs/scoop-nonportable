@@ -1,7 +1,7 @@
 {
     "version": "2.1.0.0",
-    "homepage": "https://www.biglybt.com",
-    "description": "A feature filled bittorrent client.",
+    "homepage": "https://www.biglybt.com/",
+    "description": "BitTorrent client.",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
@@ -15,26 +15,28 @@
     },
     "installer": {
         "args": [
-            "/verysilent",
-            "/nocancel",
-            "/norestart",
-            "/dir=$dir"
-        ]
+            "-q",
+            "-dir \"$dir\\install\""
+        ],
+        "##": "For some reason, Scoop fails to remove the installer once installation is complete.",
+        "keep": true
     },
+    "post_install": [
+        "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\BiglyBT.lnk\"",
+        "Remove-Item \"$env:PROGRAMDATA\\Microsoft\\Windows\\Start Menu\\Programs\\BiglyBT.lnk\""
+    ],
     "uninstaller": {
-        "file": "uninstall.exe",
-        "args": [
-            "/verysilent",
-            "/nocancel",
-            "/norestart"
-        ]
+        "file": "install\\uninstall.exe",
+        "args": "-q"
     },
-    "suggest": {
-        "JDK": [
-            "java/openjdk",
-            "java/oraclejdk"
+    "##": "We install to $dir\\install instead of just $dir because for some reason, Scoop has trouble removing $dir upon uninstallation.",
+    "bin": "install\\BiglyBT.exe",
+    "shortcuts": [
+        [
+            "install\\BiglyBT.exe",
+            "BiglyBT"
         ]
-    },
+    ],
     "checkver": {
         "github": "https://github.com/BiglySoftware/BiglyBT"
     },
