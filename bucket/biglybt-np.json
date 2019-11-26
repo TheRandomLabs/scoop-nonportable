@@ -24,12 +24,6 @@
         "file": "uninstall.exe",
         "args": "-q"
     },
-    "suggest": {
-        "JDK": [
-            "java/openjdk",
-            "java/oraclejdk"
-        ]
-    },
     "bin": "BiglyBT.exe",
     "checkver": {
         "github": "https://github.com/BiglySoftware/BiglyBT"
