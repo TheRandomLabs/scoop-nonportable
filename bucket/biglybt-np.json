@@ -14,20 +14,11 @@
         }
     },
     "installer": {
-        "args": [
-            "/verysilent",
-            "/nocancel",
-            "/norestart",
-            "/dir=$dir"
-        ]
+        "args": "-q -dir '$dir'"
     },
     "uninstaller": {
         "file": "uninstall.exe",
-        "args": [
-            "/verysilent",
-            "/nocancel",
-            "/norestart"
-        ]
+        "args": "-q"
     },
     "suggest": {
         "JDK": [
@@ -35,6 +26,7 @@
             "java/oraclejdk"
         ]
     },
+    "bin": "BiglyBT.exe",
     "checkver": {
         "github": "https://github.com/BiglySoftware/BiglyBT"
     },
