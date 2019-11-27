@@ -1,13 +1,13 @@
 {
-    "version": "441.20",
+    "version": "441.41",
     "description": "NVIDIA display driver.",
     "homepage": "https://www.nvidia.com/Download/index.aspx",
     "license": "Freeware",
     "notes": "This is only an installer for the NVIDIA display driver. Running `scoop uninstall nvidia-display-driver` will only unregister it from Scoop.",
     "architecture": {
         "64bit": {
-            "url": "https://us.download.nvidia.com/Windows/441.20/441.20-desktop-win10-64bit-international-whql.exe#/dl.7z",
-            "hash": "696bafbb02d8459bb61f15891801701a917af4c9892f16db56e1d5a7b3b35e56"
+            "url": "https://us.download.nvidia.com/Windows/441.41/441.41-desktop-win10-64bit-international-whql.exe#/dl.7z",
+            "hash": "3f30c38f083834ae2f5867f4ca6cc7487b1b1c145305943cc81391aa02641d88"
         }
     },
     "installer": {
