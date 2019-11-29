@@ -31,7 +31,9 @@
             "",
             "Start-Process -Wait \"$dir\\setup\\setup.exe\" \"-s -noreboot\" -Verb RunAs",
             "Remove-Item -Recurse \"$dir\\extract\"",
-            "Remove-Item -Recurse \"$dir\\setup\""
+            "Remove-Item -Recurse \"$dir\\setup\"",
+            "Stop-Service NVDisplay.ContainerLocalSystem",
+            "Stop-Service NVDisplay.ContainerLocalSystem -StartupType Disabled"
         ]
     },
     "checkver": {
