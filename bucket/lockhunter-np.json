@@ -1,10 +1,10 @@
 {
+    "version": "3.3.4",
+    "description": "File unlocker.",
     "homepage": "https://lockhunter.com/index.htm",
-    "version": "3.2.3",
-    "description": "a foolproof file unlocker",
-    "license": "Unknown",
-    "url": "https://lockhunter.com/exe/lockhuntersetup_3-2-3.exe",
-    "hash": "59e7051cb079be49ac2bb4dd44cbdb6d4e11b6466d779465c7d1a3ca59272663",
+    "license": "Freeware",
+    "url": "https://lockhunter.com/exe/lockhuntersetup_3-3-4.exe",
+    "hash": "a91ca5b5d4517666f65a43e39da56fdd6c13e1bcb9f22fad1790acc5326680c6",
     "architecture": {
         "64bit": {
             "pre_install": [
@@ -12,6 +12,7 @@
                 "    error \"Administrator rights are required to install $app.\"",
                 "    exit 1",
                 "}",
+                "",
                 "Get-ChildItem \"$dir\" '*,1.*' | Rename-Item -Path { $_.Fullname } -NewName { $_.Basename.TrimEnd(',1') + $_.Extension }"
             ],
             "installer": {
@@ -23,6 +24,7 @@
                     "    error \"Administrator rights are required to uninstall $app.\"",
                     "    exit 1",
                     "}",
+                    "",
                     "regsvr32 /u /s \"$dir\\LHShellExt64.dll\""
                 ]
             }
@@ -33,6 +35,7 @@
                 "    error \"Administrator rights are required to install $app.\"",
                 "    exit 1",
                 "}",
+                "",
                 "Get-ChildItem \"$dir\" '*,2.*' | Rename-Item -Path { $_.Fullname } -NewName { $_.Basename.TrimEnd(',2') + $_.Extension }"
             ],
             "installer": {
@@ -44,34 +47,30 @@
                     "    error \"Administrator rights are required to uninstall $app.\"",
                     "    exit 1",
                     "}",
+                    "",
                     "regsvr32 /u /s \"$dir\\LHShellExt32.dll\""
                 ]
             }
         }
     },
+    "innosetup": true,
     "post_install": [
         "Remove-Item \"$dir\\*,*.*\""
     ],
-    "innosetup": true,
-    "checkver": {
-        "url": "https://lockhunter.com/download.htm",
-        "re": "Version: ([\\d\\.]+)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://lockhunter.com/exe/lockhuntersetup_$dashVersion.exe"
-            },
-            "32bit": {
-                "url": "https://lockhunter.com/exe/lockhuntersetup_$dashVersion.exe"
-            }
-        }
-    },
     "bin": "lockhunter.exe",
     "shortcuts": [
         [
             "lockhunter.exe",
             "LockHunter"
         ]
-    ]
+    ],
+    "checkver": {
+        "url": "https://lockhunter.com/download.htm",
+        "regex": "Version: ([\\d\\.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "url": "https://lockhunter.com/exe/lockhuntersetup_$dashVersion.exe"
+        }
+    }
 }
