@@ -30,7 +30,7 @@
             "}",
             "",
             "$store = 'TrustedPeople'",
-            "sudo certutil -delstore $store ${dir}\\FluentTerminal.Package_${version}_x86_x64.cer",
+            "certutil -delstore $store ${dir}\\FluentTerminal.Package_${version}_x86_x64.cer",
             "New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT",
             "reg delete 'HKCR\\Directory\\Background\\shell\\Open Fluent Terminal here' \/f",
             "powershell /c 'Get-AppxPackage -Name *FluentTerminal* | Remove-AppxPackage -AllUsers'"
