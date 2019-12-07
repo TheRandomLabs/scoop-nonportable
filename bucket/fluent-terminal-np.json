@@ -19,7 +19,6 @@
         "reg add 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock' /t REG_DWORD /f /v 'AllowAllTrustedApps' /d 1"
     ],
     "post_install": [
-        "(Get-Content \"$dir\\Install.ps1\").Replace(' -ForceUpdateFromAnyVersion', '') | Set-Content \"$dir\\Install.ps1\"",
         "& \"$dir\\Install.ps1\" -ForceContextMenu"
     ],
     "uninstaller": {
