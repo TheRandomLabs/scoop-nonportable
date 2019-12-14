@@ -31,9 +31,9 @@
     },
     "checkver": {
         "url": "https://my.vmware.com/web/vmware/details?productId=863&downloadGroup=CART20FQ4_WIN_530",
-        "regex": "(?<downloadGroup>CART[\\d]+FQ[\\d])/VMware-Horizon-Client-(?<version>[\\d.]+-[\\d]+).exe"
+        "regex": "(?<downloadgroup>CART[\\d]+FQ[\\d])/VMware-Horizon-Client-(?<version>[\\d.]+-[\\d]+).exe"
     },
     "autoupdate": {
-        "url": "https://download3.vmware.com/software/view/viewclients/$matchDownloadGroup/VMware-Horizon-Client-$version.exe#/VMware-Horizon-Client-Setup.exe"
+        "url": "https://download3.vmware.com/software/view/viewclients/$matchDownloadgroup/VMware-Horizon-Client-$version.exe#/VMware-Horizon-Client-Setup.exe"
     }
 }
