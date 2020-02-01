@@ -9,7 +9,8 @@
     "installer": {
         "script": [
             "$process = Start-Process \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -Verb RunAs -PassThru",
-            "do { Start-Sleep -Milliseconds 200 } until ($process.HasExited)"
+            "do { Start-Sleep -Milliseconds 200 } until ($process.HasExited)",
+            "Remove-Item -Recurse \"$env:PROGRAMDATA\\Microsoft\\Windows\\Start Menu\\Programs\\darktable\""
         ]
     },
     "uninstaller": {
@@ -29,8 +30,10 @@
         "bin\\darktable-cli.exe"
     ],
     "shortcuts": [
-        "bin\\darktable.exe",
-        "darktable"
+        [
+            "bin\\darktable.exe",
+            "darktable"
+        ]
     ],
     "checkver": {
         "github": "https://github.com/darktable-org/darktable",
