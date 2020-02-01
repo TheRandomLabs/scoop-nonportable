@@ -21,7 +21,7 @@
             "/NORESTART"
         ]
     },
-    "post_install": "Remove-Item -Recurse \"$env:PROGRAMDATA\\Microsoft\\Windows\\Start Menu\\Programs\\darktable\"",
+    "post_install": "Remove-Item -Recurse \"$env:PROGRAMDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Ditto\"",
     "uninstaller": {
         "file": "unins000.exe",
         "args": [
