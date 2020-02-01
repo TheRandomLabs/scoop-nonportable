@@ -15,7 +15,7 @@
     },
     "uninstaller": {
         "script": [
-            "Start-Process \"$dir\\Uninstall.exe\" -ArgumentList @('/S') -Verb RunAs -PassThru",
+            "Start-Process \"$dir\\Uninstall.exe\" -ArgumentList @('/S') -Verb RunAs -PassThru | Out-Null",
             "$activeProcess1 = Get-Process Uninstall -ErrorAction SilentlyContinue",
             "$activeProcess2 = Get-Process Un_A -ErrorAction SilentlyContinue",
             "do {",
