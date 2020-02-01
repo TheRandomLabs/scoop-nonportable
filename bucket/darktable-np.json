@@ -28,6 +28,10 @@
         "bin\\darktable.exe",
         "bin\\darktable-cli.exe"
     ],
+    "shortcuts": [
+        "bin\\darktable.exe",
+        "darktable"
+    ],
     "checkver": {
         "github": "https://github.com/darktable-org/darktable",
         "regex": "tree/release-([\\d.]+)"
