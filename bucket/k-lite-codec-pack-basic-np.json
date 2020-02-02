@@ -23,7 +23,7 @@
     },
     "checkver": {
         "url": "https://codecguide.com/download_k-lite_codec_pack_basic.htm",
-        "re": "Version ([\\d.]+) Basic"
+        "regex": "Version ([\\d.]+) Basic"
     },
     "autoupdate": {
         "url": "https://files3.codecguide.com/K-Lite_Codec_Pack_$cleanVersion_Basic.exe",
