@@ -1,5 +1,6 @@
 {
     "version": "7.8.4",
+    "description": "Text and source code editor.",
     "homepage": "https://notepad-plus-plus.org/",
     "license": "GPL-2.0-only",
     "architecture": {
@@ -18,9 +19,7 @@
     "uninstaller": {
         "script": [
             "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList @('/S') -RunAs | Out-Null",
-            "Start-Process taskkill -ArgumentList @('/F', '/IM', 'explorer.exe') -Wait",
-            "explorer",
-            "Start-Sleep -Seconds 2"
+            "Stop-Process -Name explorer"
         ]
     },
     "bin": "notepad++.exe",
