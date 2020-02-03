@@ -1,6 +1,6 @@
 {
     "version": "15.0.18206.0",
-    "description": "An integrated environment for SQL Server infrastructure administration and T-SQL development.",
+    "description": "Integrated environment for SQL Server infrastructure administration and T-SQL development.",
     "homepage": "https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms",
     "license": "Freeware",
     "url": "https://download.microsoft.com/download/1/9/4/1949aa9c-6536-48f2-81fa-e7bb07410b36/SSMS-Setup-ENU.exe",
