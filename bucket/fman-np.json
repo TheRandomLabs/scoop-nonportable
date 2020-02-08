@@ -11,11 +11,13 @@
     "installer": {
         "script": [
             "Start-Process \"$dir\\setup.exe\" -ArgumentList '/S' | Out-Null",
+            "",
             "while ($true) {",
-                "if (Get-Process -Name fman -ErrorAction SilentlyContinue) { Stop-Process -Name fman -Force }",
-                "if (!(Get-Process -Name setup -ErrorAction SilentlyContinue)) { break }",
-                "Start-Sleep -Seconds 1",
+            "    if (Get-Process -Name fman -ErrorAction SilentlyContinue) { Stop-Process -Name fman -Force }",
+            "    if (!(Get-Process -Name setup -ErrorAction SilentlyContinue)) { break }",
+            "    Start-Sleep -Seconds 1",
             "}",
+            "",
             "Remove-Item \"$dir\\setup.exe\""
         ]
     },
