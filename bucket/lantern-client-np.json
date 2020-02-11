@@ -16,7 +16,7 @@
         ]
     },
     "uninstaller": {
-        "script": "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList @('/S', \"/D=$dir\") | Out-Null"
+        "script": "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' | Out-Null"
     },
     "bin": "lantern.exe",
     "shortcuts": [
