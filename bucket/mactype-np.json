@@ -7,7 +7,7 @@
     "notes": [
         "Launch MacType Wizard (macwiz.exe) to configure MacType.",
         "",
-        "Antivirus software may conflict with MacType because it sees MacType trying to modify running software.",
+        "Antivirus software may conflict with MacType because it detects MacType trying to modify running software.",
         "Workarounds:",
         "- Run in Service Mode (recommended)",
         "- Add `HookChildProcesses=0` to profile; see: https://github.com/snowie2000/mactype/wiki/HookChildProcesses"
