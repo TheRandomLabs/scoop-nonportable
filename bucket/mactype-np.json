@@ -1,5 +1,5 @@
 {
-    "##": "The installer of MacType is created with AdvancedInstaller.",
+    "##": "The MacType installer is created with AdvancedInstaller.",
     "version": "2019.1-beta6",
     "description": "Provides better font rendering for Windows.",
     "homepage": "https://mactype.net",
@@ -7,10 +7,10 @@
     "notes": [
         "Launch MacType Wizard (macwiz.exe) to configure MacType.",
         "",
-        "Antivirus software may conflict with MacType, because it sees MacType trying to modify running software.",
-        "One possible workaround is to try running in Service Mode (recommended),",
-        " or add HookChildProcesses=0 to your profile.",
-        "See 'https://github.com/snowie2000/mactype/wiki/HookChildProcesses' for explanation."
+        "Antivirus software may conflict with MacType because it sees MacType trying to modify running software.",
+        "Workarounds:",
+        "- Run in Service Mode (recommended)",
+        "- Add `HookChildProcesses=0` to profile; see: https://github.com/snowie2000/mactype/wiki/HookChildProcesses"
     ],
     "url": "https://github.com/snowie2000/mactype/releases/download/2019.1-beta6/MacTypeInstaller_2019.1-beta6.exe#/dl.exe",
     "hash": "d4d84bbb0d67480ac9c19d9f60874a496c84c54852e12f6b85e1c8ccb8c123ed",
@@ -24,8 +24,8 @@
             "$text = @(",
             "    'If you encounter \"file in use\" error during uninstallation, try the follwing steps:'",
             "    '    1. Launch MacType Wizard (macwiz.exe) and select \"Manual\" mode.'",
-            "    '    2. If your previous mode is not manual mode, reboot your computer.'",
-            "    '    3. Run \"scoop uninstall mactype-np\" to uninstall the package.'",
+            "    '    2. Reboot.'",
+            "    '    3. Run `scoop uninstall mactype-np`.",
             ")",
             "warn $($text -join \"`r`n\")"
         ]
