@@ -3,6 +3,7 @@
     "description": "Terminal emulator based on UWP and web technologies.",
     "homepage": "https://github.com/felixse/FluentTerminal",
     "license": "GPL-3.0-only",
+    "notes": "To add Fluent Terminal to context menu run InstallContextMenu.bat from installation directory",
     "url": "https://github.com/felixse/FluentTerminal/releases/download/0.7.0.0/FluentTerminal_0.7.0.0.zip",
     "hash": "2d6ac7d6bcd3c50050f80c8a8b7aa061c506525ada76578aff2c01f686a8f3ce",
     "pre_install": [
