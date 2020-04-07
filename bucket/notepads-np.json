@@ -26,10 +26,7 @@
                 "gpupdate /force",
                 "reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowDevelopmentWithoutDevLicense\" /d \"1\""
             ],
-            "post_install": [
-                "Add-AppxPackage \"${dir}//Notepads`_${version}`_x64.msixbundle\"",
-                "Get-Childitem -Path $dir -Recurse | where-object {$_.Name -like \"*sed*\"} | Remove-Item -Force"
-            ],
+            "post_install": "Add-AppxPackage \"${dir}//Notepads`_${version}`_x64.msixbundle\"",
             "uninstaller": {
                 "script": [
                     "if (!(is_admin)) {",
@@ -65,11 +62,8 @@
                 "gpupdate /force",
                 "reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowDevelopmentWithoutDevLicense\" /d \"1\""
             ],
-            "post_install": [
-                "Add-AppxPackage \"${dir}//Notepads`_${version}`_x86.msixbundle\"",
-                "Get-Childitem -Path $dir -Recurse | where-object {$_.Name -like \"*sed*\"} | Remove-Item -Force"
-            ],
-            "uninstaller": {
+            "post_install": "Add-AppxPackage \"${dir}//Notepads`_${version}`_x86.msixbundle\"",
+             "uninstaller": {
                 "script": [
                     "if (!(is_admin)) {",
                     "    error \"Administrator rights are required to uninstall $app.\"",
