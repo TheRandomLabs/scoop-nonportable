@@ -1,0 +1,105 @@
+{
+    "version": "1.2.0.0",
+    "description": "A modern, lightweight text editor with a minimalist design.",
+    "homepage": "https://github.com/JasonStein/Notepads",
+    "license": "MIT License",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/JasonStein/Notepads/releases/download/v1.2.0.0/Notepads_1.2.0.0_x64.zip",
+            "hash": "7b070f89627fd3d54929b6bfd935b9b17c818d2e6285a3db7ce4e59ea215d38a",
+            "pre_install": [
+                "if (!(is_admin)) {",
+                "    error \"Administrator rights are required to install $app.\"",
+                "    exit 1",
+                "}",
+                "",
+                "New-Item \"$dir//notepads.ps1\" | Out-Null",
+                "Set-Content \"$dir//notepads.ps1\" \"explorer shell:AppsFolder\\`$(Get-AppXPackage -name *Notepads* | select -expandproperty PackageFamilyName)`!App\"",
+                "Move-Item ${dir}\\Notepads_${version}_x64\\* ${dir}",
+                "Remove-Item ${dir}\\Notepads_${version}_x64",
+                "$cert=New-Object System.Security.Cryptography.X509Certificates.X509Certificate2",
+                "$cert.Import(\"${dir}\\Notepads_${version}_x64.cer\")",
+                "$thumb = \"$cert.Thumbprint\"",
+                "$store = \"TrustedPeople\"",
+                "if (Get-ChildItem -Path Cert:\\LocalMachine\\$store | Where-Object {$_.Thumbprint -eq $thumb}) { return }",
+                "certutil -addstore $store ${dir}\\Notepads_${version}_x64.cer",
+                "gpupdate /force",
+                "reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowDevelopmentWithoutDevLicense\" /d \"1\""
+            ],
+            "post_install": [
+                "Add-AppxPackage \"${dir}//Notepads`_${version}`_x64.msixbundle\"",
+                "Get-Childitem -Path $dir -Recurse | where-object {$_.Name -like \"*sed*\"} | Remove-Item -Force"
+            ],
+            "uninstaller": {
+                "script": [
+                    "if (!(is_admin)) {",
+                    "    error \"Administrator rights are required to uninstall $app.\"",
+                    "    exit 1",
+                    "}",
+                    "",
+                    "$store = \"TrustedPeople\"",
+                    "certutil -delstore $store \"${dir}\\Notepads_$version_x64.cer\"",
+                    "Get-AppxPackage -Name *Notepads* | Remove-AppxPackage -AllUsers"
+                ]
+            }
+        },
+        "32bit": {
+            "url": "https://github.com/JasonStein/Notepads/releases/download/v1.2.0.0/Notepads_1.2.0.0_x86.zip",
+            "hash": "5ab2d3cea5f4e558d049e9666a476fdc85b4e3ce55361ba30d42a590213f1dbe",
+            "pre_install": [
+                "if (!(is_admin)) {",
+                "    error \"Administrator rights are required to install $app.\"",
+                "    exit 1",
+                "}",
+                "",
+                "New-Item \"$dir//notepads.ps1\" | Out-Null",
+                "Set-Content \"$dir//notepads.ps1\" \"explorer shell:AppsFolder\\`$(Get-AppXPackage -name *Notepads* | select -expandproperty PackageFamilyName)`!App\"",
+                "Move-Item ${dir}\\Notepads_${version}_x86\\* ${dir}",
+                "Remove-Item ${dir}\\Notepads_${version}_x86",
+                "$cert=New-Object System.Security.Cryptography.X509Certificates.X509Certificate2",
+                "$cert.Import(\"${dir}\\Notepads_${version}_x86.cer\")",
+                "$thumb = \"$cert.Thumbprint\"",
+                "$store = \"TrustedPeople\"",
+                "if (Get-ChildItem -Path Cert:\\LocalMachine\\$store | Where-Object {$_.Thumbprint -eq $thumb}) { return }",
+                "certutil -addstore $store ${dir}\\Notepads_${version}_x86.cer",
+                "gpupdate /force",
+                "reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowDevelopmentWithoutDevLicense\" /d \"1\""
+            ],
+            "post_install": [
+                "Add-AppxPackage \"${dir}//Notepads`_${version}`_x86.msixbundle\"",
+                "Get-Childitem -Path $dir -Recurse | where-object {$_.Name -like \"*sed*\"} | Remove-Item -Force"
+            ],
+            "uninstaller": {
+                "script": [
+                    "if (!(is_admin)) {",
+                    "    error \"Administrator rights are required to uninstall $app.\"",
+                    "    exit 1",
+                    "}",
+                    "",
+                    "$store = \"TrustedPeople\"",
+                    "certutil -delstore $store \"${dir}\\Notepads_$version_x86.cer\"",
+                    "Get-AppxPackage -Name *Notepads* | Remove-AppxPackage -AllUsers"
+                ]
+            }
+        }
+    },
+    "bin": [
+        [
+            "notepads.ps1",
+            "notepads"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/JasonStein/Notepads"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/JasonStein/Notepads/releases/download/v$version/Notepads_$version_x64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/JasonStein/Notepads/releases/download/v$version/Notepads_$version_x86.zip"
+            }
+        }
+    }
+}
