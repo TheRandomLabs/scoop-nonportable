@@ -1,12 +1,12 @@
 {
-    "version": "1.2.0.0",
+    "version": "1.2.1.0",
     "description": "A modern, lightweight text editor with a minimalist design.",
     "homepage": "https://github.com/JasonStein/Notepads",
     "license": "MIT License",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/JasonStein/Notepads/releases/download/v1.2.0.0/Notepads_1.2.0.0_x64.zip",
-            "hash": "7b070f89627fd3d54929b6bfd935b9b17c818d2e6285a3db7ce4e59ea215d38a",
+            "url": "https://github.com/JasonStein/Notepads/releases/download/v1.2.1.0/Notepads_1.2.1.0_x64.zip",
+            "hash": "cecc10c49a6e42ac917684298bbd3d5f69c961c64c403077399fa7a654bd37a6",
             "pre_install": [
                 "if (!(is_admin)) {",
                 "    error \"Administrator rights are required to install $app.\"",
@@ -44,8 +44,8 @@
             }
         },
         "32bit": {
-            "url": "https://github.com/JasonStein/Notepads/releases/download/v1.2.0.0/Notepads_1.2.0.0_x86.zip",
-            "hash": "5ab2d3cea5f4e558d049e9666a476fdc85b4e3ce55361ba30d42a590213f1dbe",
+            "url": "https://github.com/JasonStein/Notepads/releases/download/v1.2.1.0/Notepads_1.2.1.0_x86.zip",
+            "hash": "643e527a469513e98a19eed5ae8a50555f2a6b3e173368f9e133813918a87860",
             "pre_install": [
                 "if (!(is_admin)) {",
                 "    error \"Administrator rights are required to install $app.\"",
