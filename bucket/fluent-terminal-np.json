@@ -13,7 +13,7 @@
         "",
         "reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowAllTrustedApps\" /d 1",
         "New-Item \"$dir//fluent-terminal.ps1\" | Out-Null",
-        "Set-Content \"$dir//fluent-terminal.ps1\" \"start shell:AppsFolder\\53621FSApps.FluentTerminal_zzw7cgfsy6dd6!App\""
+        "Set-Content \"$dir//fluent-terminal.ps1\" \"explorer shell:AppsFolder\\`$(Get-AppXPackage -name *FluentTerminal* | select -expandproperty PackageFamilyName)`!App\""
     ],
     "post_install": [
         "Add-AppxPackage \"${dir}//FluentTerminal.Package`_${version}`_x64.appxbundle\"",
