@@ -3,7 +3,6 @@
     "description": "Terminal emulator based on UWP and web technologies.",
     "homepage": "https://github.com/felixse/FluentTerminal",
     "license": "GPL-3.0-only",
-    "notes": "To add Fluent Terminal to context menu run InstallContextMenu.bat from installation directory",
     "url": "https://github.com/felixse/FluentTerminal/releases/download/0.7.0.0/FluentTerminal_0.7.0.0.zip",
     "hash": "2d6ac7d6bcd3c50050f80c8a8b7aa061c506525ada76578aff2c01f686a8f3ce",
     "pre_install": [
@@ -12,12 +11,21 @@
         "    exit 1",
         "}",
         "",
-        "reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowAllTrustedApps\" /d 1"
+        "reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowAllTrustedApps\" /d 1",
+        "New-Item \"$dir//fluent-terminal.ps1\" | Out-Null",
+        "Set-Content \"$dir//fluent-terminal.ps1\" \"start shell:AppsFolder\\53621FSApps.FluentTerminal_zzw7cgfsy6dd6!App\""
     ],
     "post_install": [
         "Add-AppxPackage \"${dir}//FluentTerminal.Package`_${version}`_x64.appxbundle\"",
         "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Install.bat -OutFile $dir//InstallContextMenu.bat -UseBasicParsing",
-        "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Uninstall.bat -OutFile $dir//UninstallContextMenu.bat -UseBasicParsing"
+        "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Uninstall.bat -OutFile $dir//UninstallContextMenu.bat -UseBasicParsing",
+        "cmd /c \"$dir//InstallContextMenu.bat > nul 2> nul\""
+    ],
+    "bin": [
+        [
+            "fluent-terminal.ps1",
+            "fluent-terminal"
+        ]
     ],
     "uninstaller": {
         "script": [
