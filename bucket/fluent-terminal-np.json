@@ -20,7 +20,7 @@
             "cmd /c \"$dir//InstallContextMenu.bat > nul 2> nul\"",
             "",
             "New-Item \"$dir//fluent-terminal.ps1\" | Out-Null",
-            "Set-Content \"$dir//fluent-terminal.ps1\" \"explorer shell:AppsFolder\\`$(Get-AppXPackage -name *FluentTerminal* | select -expandproperty PackageFamilyName)`!App\""
+            "Set-Content \"$dir//fluent-terminal.ps1\" \"explorer shell:AppsFolder\\`$(Get-AppXPackage -Name *FluentTerminal* | Select-Object -ExpandProperty PackageFamilyName)`!App\""
         ]
     },
     "bin": [
