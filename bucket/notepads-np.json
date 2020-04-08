@@ -40,7 +40,7 @@
             "",
             "Add-AppxPackage \"$dir\\$notepads.msixbundle\"",
             "New-Item \"$dir\\notepads.ps1\" | Out-Null",
-            "Set-Content \"$dir\\notepads.ps1\" \"explorer shell:AppsFolder\\`$(Get-AppXPackage -name *Notepads* | Select-Object -ExpandProperty PackageFamilyName)`!App\""
+            "Set-Content \"$dir\\notepads.ps1\" \"explorer shell:AppsFolder\\$(Get-AppXPackage -Name *Notepads* | Select-Object -ExpandProperty PackageFamilyName)!App\""
         ]
     },
     "uninstaller": {
