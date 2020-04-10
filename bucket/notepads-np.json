@@ -1,7 +1,7 @@
 {
     "version": "1.2.1.0",
     "description": "Lightweight text editor.",
-    "homepage": "https://github.com/JasonStein/Notepads",
+    "homepage": "https://www.notepadsapp.com/",
     "license": "MIT",
     "architecture": {
         "64bit": {
