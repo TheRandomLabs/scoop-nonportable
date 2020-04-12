@@ -26,5 +26,14 @@
             "if ($rc -notin $success) { abort \"Uninstall failed, see log for details:`n$log\" }"
         ]
     },
-    "bin": "Common7\\IDE\\Ssms.exe"
+    "bin": "Common7\\IDE\\Ssms.exe",
+    "shortcuts": [
+        [
+            "Common7\\IDE\\Ssms.exe",
+            "SQL Server Management Studio"
+        ]
+    ],
+    "checkver": {
+        "regex": "Build number: (?<version>[\\d.]+)"
+    }
 }
