@@ -3,7 +3,7 @@
     "description": "Integrated environment for SQL Server infrastructure administration and T-SQL development.",
     "homepage": "https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms",
     "license": "Freeware",
-    "url": "https://aka.ms/ssmsfullsetup",
+    "url": "https://aka.ms/ssmsfullsetup#/SSMS-Setup-ENU.exe",
     "hash": "b7206b5118f45fab45138837da7f89eecdc17f3856febad56c1ffafae6940b41",
     "installer": {
         "script": [
