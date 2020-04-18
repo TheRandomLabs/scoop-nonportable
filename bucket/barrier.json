@@ -1,0 +1,22 @@
+{
+    "version": "2.3.2",
+    "description": "Barrier is software that mimics the functionality of a KVM switch, which historically would allow you to use a single keyboard and mouse to control multiple computers by physically turning a dial on the box to switch the machine you're controlling at any given moment. Barrier does this in software, allowing you to tell it which machine to control by moving your mouse to the edge of the screen, or by using a keypress to switch focus to a different system.",
+    "homepage": "https://github.com/debauchee/barrier",
+    "license": "GPL-2.0",
+    "url": "https://github.com/debauchee/barrier/releases/download/v2.3.2/BarrierSetup-2.3.2.exe",
+    "hash": "a6a195c55c199b35c737d7494327b37da94ded4eb2592871d4ad747aa8baa39a",
+    "installer": {
+        "args": [
+            "/verysilent",
+            "/nocancel",
+            "/norestart"
+        ]
+    },
+    "uninstaller": {
+        "script": "& \"$Env:Programfiles\\Barrier\\unins000.exe\" /verysilent /nocancel /norestart"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/debauchee/barrier/releases/download/v$version/BarrierSetup-$version.exe"
+    }
+}
