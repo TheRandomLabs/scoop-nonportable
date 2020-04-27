@@ -29,8 +29,7 @@
             "Move-Item \"$dir\\$notepads\\*\" \"$dir\"",
             "Remove-Item \"$dir\\$notepads\"",
             "",
-            "$certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2",
-            "$certificate.Import(\"$dir\\$notepads.cer\")",
+            "$certificate = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate2(\"$dir\\$notepads.cer\")",
             "",
             "if (-not (Get-ChildItem -Path Cert:\\LocalMachine\\TrustedPeople | Where-Object {$_.Thumbprint -eq $certificate.Thumbprint})) {",
             "    certutil -addstore TrustedPeople \"$dir\\$notepads.cer\"",
@@ -38,11 +37,13 @@
             "    reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowDevelopmentWithoutDevLicense\" /d \"1\"",
             "}",
             "",
-            "Add-AppxPackage \"$dir\\$notepads.msixbundle\"",
-            "New-Item \"$dir\\notepads.ps1\" | Out-Null",
-            "Set-Content \"$dir\\notepads.ps1\" \"explorer shell:AppsFolder\\$(Get-AppXPackage -Name *Notepads* | Select-Object -ExpandProperty PackageFamilyName)!App\""
+            "Add-AppxPackage \"$dir\\$notepads.msixbundle\""
         ]
     },
+    "post_install": [
+        "$name = (Get-AppxPackage -Name *Notepads*).PackageFamilyName",
+        "Copy-Item $dir\\Settings -Destination $env:LocalAppData\\Packages\\$name -Force -Recurse | Out-Null"
+    ],
     "uninstaller": {
         "script": [
             "if (!(is_admin)) {",
@@ -50,6 +51,8 @@
             "    exit 1",
             "}",
             "",
+            "$name = (Get-AppxPackage -Name *Notepads*).PackageFamilyName",
+            "Copy-Item $env:LocalAppData\\Packages\\$name\\Settings -Destination $dir -Force -Recurse | Out-Null",
             "if ($architecture -eq '64bit') {",
             "    certutil -delstore TrustedPeople \"$dir\\Notepads_$version_x64.cer\"",
             "} else {",
@@ -59,12 +62,7 @@
             "Get-AppxPackage -Name *Notepads* | Remove-AppxPackage -AllUsers"
         ]
     },
-    "bin": [
-        [
-            "notepads.ps1",
-            "notepads"
-        ]
-    ],
+    "persist": "Settings",
     "checkver": {
         "github": "https://github.com/JasonStein/Notepads"
     },
