@@ -51,6 +51,8 @@
             "    exit 1",
             "}",
             "",
+            "Taskkill /IM Notepads.exe /f | Out-Null",
+            "",
             "$name = (Get-AppxPackage -Name *Notepads*).PackageFamilyName",
             "Copy-Item $env:LocalAppData\\Packages\\$name\\Settings -Destination $dir -Force -Recurse | Out-Null",
             "if ($architecture -eq '64bit') {",
