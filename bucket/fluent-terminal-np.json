@@ -18,16 +18,12 @@
             "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Install.bat -OutFile $dir//InstallContextMenu.bat -UseBasicParsing",
             "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Uninstall.bat -OutFile $dir//UninstallContextMenu.bat -UseBasicParsing",
             "cmd /c \"$dir//InstallContextMenu.bat > nul 2> nul\"",
-            "",
-            "New-Item \"$dir//fluent-terminal.ps1\" | Out-Null",
-            "Set-Content \"$dir//fluent-terminal.ps1\" \"explorer shell:AppsFolder\\`$(Get-AppXPackage -Name *FluentTerminal* | Select-Object -ExpandProperty PackageFamilyName)`!App\""
+            ""
         ]
     },
-    "bin": [
-        [
-            "fluent-terminal.ps1",
-            "fluent-terminal"
-        ]
+    "post_install": [
+        "$name = (Get-AppxPackage -Name *FluentTerminal*).PackageFamilyName",
+        "Copy-Item $dir\\Settings -Destination $env:LocalAppData\\Packages\\$name -Force -Recurse | Out-Null"
     ],
     "uninstaller": {
         "script": [
@@ -36,10 +32,16 @@
             "    exit 1",
             "}",
             "",
+            "Taskkill /IM FluentTerminal.App.exe /f | Out-Null",
+            "Taskkill /IM FluentTerminal.SystemTray.exe /f | Out-Null",
+            "",
+            "$name = (Get-AppxPackage -Name *FluentTerminal*).PackageFamilyName",
+            "Copy-Item $env:LocalAppData\\Packages\\$name\\Settings -Destination $dir -Force -Recurse | Out-Null",
             "cmd /c \"$dir//UninstallContextMenu.bat > nul 2> nul\"",
             "Get-AppxPackage -Name *FluentTerminal* | Remove-AppxPackage -AllUsers"
         ]
     },
+    "persist": "Settings",
     "checkver": {
         "github": "https://github.com/felixse/FluentTerminal"
     },
