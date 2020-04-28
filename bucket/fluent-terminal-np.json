@@ -12,18 +12,17 @@
             "    exit 1",
             "}",
             "",
-            "reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowAllTrustedApps\" /d 1",
+            "reg add HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock /t REG_DWORD /f /v AllowAllTrustedApps /d 1",
             "",
-            "Add-AppxPackage \"${dir}//FluentTerminal.Package`_${version}`_x64.appxbundle\"",
-            "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Install.bat -OutFile $dir//InstallContextMenu.bat -UseBasicParsing",
-            "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Uninstall.bat -OutFile $dir//UninstallContextMenu.bat -UseBasicParsing",
-            "cmd /c \"$dir//InstallContextMenu.bat > nul 2> nul\"",
-            ""
+            "Add-AppxPackage \"$dir\\FluentTerminal.Package_${version}_x64.appxbundle\"",
+            "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Install.bat -OutFile \"$dir\\InstallContextMenu.bat\" -UseBasicParsing",
+            "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Uninstall.bat -OutFile \"$dir\\UninstallContextMenu.bat\" -UseBasicParsing",
+            "cmd /c \"$dir\\InstallContextMenu.bat > nul 2> nul\""
         ]
     },
     "post_install": [
         "$name = (Get-AppxPackage -Name *FluentTerminal*).PackageFamilyName",
-        "Copy-Item $dir\\Settings -Destination $env:LocalAppData\\Packages\\$name -Force -Recurse | Out-Null"
+        "Copy-Item \"$dir\\Settings\" -Destination \"$env:LocalAppData\\Packages\\$name\" -Force -Recurse | Out-Null"
     ],
     "uninstaller": {
         "script": [
@@ -32,11 +31,11 @@
             "    exit 1",
             "}",
             "",
-            "Taskkill /IM FluentTerminal.App.exe /f | Out-Null",
-            "Taskkill /IM FluentTerminal.SystemTray.exe /f | Out-Null",
+            "taskkill /im FluentTerminal.App.exe /f | Out-Null",
+            "taskkill /im FluentTerminal.SystemTray.exe /f | Out-Null",
             "",
             "$name = (Get-AppxPackage -Name *FluentTerminal*).PackageFamilyName",
-            "Copy-Item $env:LocalAppData\\Packages\\$name\\Settings -Destination $dir -Force -Recurse | Out-Null",
+            "Copy-Item \"$env:LocalAppData\\Packages\\$name\\Settings\" -Destination $dir -Force -Recurse | Out-Null",
             "cmd /c \"$dir//UninstallContextMenu.bat > nul 2> nul\"",
             "Get-AppxPackage -Name *FluentTerminal* | Remove-AppxPackage -AllUsers"
         ]
