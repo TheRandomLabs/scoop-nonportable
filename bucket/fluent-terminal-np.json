@@ -14,10 +14,11 @@
             "",
             "reg add HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock /t REG_DWORD /f /v AllowAllTrustedApps /d 1",
             "",
-            "Add-AppxPackage \"$dir\\FluentTerminal.Package_${version}_x64.appxbundle\"",
+            "Add-AppxProvisionedPackage -Online -PackagePath \"$dir\\FluentTerminal.Package_${version}_x64.appxbundle\" -SkipLicense | Out-Null",
             "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Install.bat -OutFile \"$dir\\InstallContextMenu.bat\" -UseBasicParsing",
             "Invoke-WebRequest https://github.com/felixse/FluentTerminal/raw/master/Explorer%20Context%20Menu%20Integration/Uninstall.bat -OutFile \"$dir\\UninstallContextMenu.bat\" -UseBasicParsing",
-            "cmd /c \"$dir\\InstallContextMenu.bat > nul 2> nul\""
+            "cmd /c \"$dir\\InstallContextMenu.bat > nul 2> nul\"",
+            "Start-Sleep -Seconds 2"
         ]
     },
     "post_install": [
@@ -31,8 +32,6 @@
             "    exit 1",
             "}",
             "",
-            "taskkill /im FluentTerminal.App.exe /f | Out-Null",
-            "taskkill /im FluentTerminal.SystemTray.exe /f | Out-Null",
             "",
             "$name = (Get-AppxPackage -Name *FluentTerminal*).PackageFamilyName",
             "Copy-Item \"$env:LocalAppData\\Packages\\$name\\Settings\" -Destination $dir -Force -Recurse | Out-Null",
