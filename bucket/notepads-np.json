@@ -37,7 +37,8 @@
             "    reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\" /t REG_DWORD /f /v \"AllowDevelopmentWithoutDevLicense\" /d \"1\"",
             "}",
             "",
-            "Add-AppxPackage \"$dir\\$notepads.msixbundle\""
+            "Add-AppxProvisionedPackage -Online -PackagePath \"$dir\\$notepads.msixbundle\" -SkipLicense | Out-Null",
+            "Start-Sleep -Seconds 2"
         ]
     },
     "post_install": [
@@ -50,8 +51,6 @@
             "    error \"Administrator rights are required to uninstall $app.\"",
             "    exit 1",
             "}",
-            "",
-            "taskkill /im Notepads.exe /f | Out-Null",
             "",
             "$name = (Get-AppxPackage -Name *Notepads*).PackageFamilyName",
             "Copy-Item \"$env:LocalAppData\\Packages\\$name\\Settings\" -Destination \"$dir\" -Force -Recurse | Out-Null",
