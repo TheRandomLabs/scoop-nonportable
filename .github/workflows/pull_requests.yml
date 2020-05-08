@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - name: Pull Request Validation
+      - name: Validate Pull Request
         uses: Ash258/Scoop-GithubActions@stable
         env:
           GITH_EMAIL: therandomlabsinc@gmail.com

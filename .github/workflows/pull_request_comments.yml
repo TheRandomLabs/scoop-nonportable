@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - name: PullRequestHandler
+      - name: Validate Pull Request
         uses: Ash258/Scoop-GithubActions@stable
         if: startsWith(github.event.comment.body, '/verify')
         env:
