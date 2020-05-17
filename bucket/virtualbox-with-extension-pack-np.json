@@ -1,6 +1,5 @@
 {
     "version": "6.1.8",
-    "matchRevision": "137981",
     "description": "Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.",
     "homepage": "https://www.virtualbox.org/",
     "license": {
