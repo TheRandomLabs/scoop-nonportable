@@ -10,7 +10,10 @@
         }
     },
     "installer": {
-        "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn', \"INSTALLFOLDER=`\"$dir`\"\", \"ProgramMenuFolder=`\"$dir`\"\", \"DesktopFolder=`\"$dir`\"\") -RunAs | Out-Null"
+        "script": [
+            "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn', \"INSTALLFOLDER=`\"$dir\") -RunAs | Out-Null",
+            "Remove-Item \"$env:PROGRAMDATA\\Microsoft\\Windows\\Start Menu\\Programs\\PowerToys*.lnk\""
+        ]
     },
     "uninstaller": {
         "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
