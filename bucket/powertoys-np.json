@@ -3,6 +3,7 @@
     "description": "System utilities to maximize productivity.",
     "homepage": "https://github.com/microsoft/PowerToys",
     "license": "MIT",
+    "depends": "dotnet-sdk",
     "architecture": {
         "64bit": {
             "url": "https://github.com/microsoft/PowerToys/releases/download/v0.18.1/PowerToysSetup-0.18.1-x64.msi#/setup.msi_",
