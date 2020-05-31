@@ -11,7 +11,10 @@
             "/D=$dir"
         ]
     },
-    "post_install": "Remove-Item -Recurse \"$([Environment]::GetFolderPath('startmenu'))\\Programs\\ASIO4ALL v2\"",
+    "post_install": [
+        "Remove-Item \"$([Environment]::GetFolderPath('Desktop'))\\ASIO4ALL v2 Instruction Manual.lnk\"",
+        "Remove-Item -Recurse \"$([Environment]::GetFolderPath('startmenu'))\\Programs\\ASIO4ALL v2\""
+    ],
     "uninstaller": {
         "file": "uninstall.exe",
         "args": "/S"
