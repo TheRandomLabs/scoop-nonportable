@@ -15,6 +15,7 @@
     "url": "https://github.com/snowie2000/mactype/releases/download/2019.1-beta6/MacTypeInstaller_2019.1-beta6.exe",
     "hash": "d4d84bbb0d67480ac9c19d9f60874a496c84c54852e12f6b85e1c8ccb8c123ed",
     "innosetup": true,
+    "persist": ["ini", "MacType.ini"],
     "uninstaller": {
         "script": [
             "$text = @(",
