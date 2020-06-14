@@ -35,8 +35,6 @@
             "Remove-Item -ErrorAction Ignore -Recurse -Force \"$persist_dir\\Settings\"",
             "Copy-Item -Recurse -Force \"$env:LOCALAPPDATA\\Packages\\$($package.PackageFamilyName)\\Settings\" -Destination $persist_dir",
             "",
-            "$certificate_file = Get-ChildItem \"$dir\\*.cer\" | Select-Object -First 1",
-            "certutil -delstore TrustedPeople $certificate_file | Out-Null",
             "Remove-AppxPackage $package -AllUsers"
         ]
     },
