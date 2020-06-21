@@ -1,6 +1,6 @@
 {
     "version": "1.14",
-    "description": "Testing any removable media including SD, CF, USB flash drives.",
+    "description": "Tool for testing removable media for bad or unstable sectors.",
     "homepage": "https://www.vconsole.com/download",
     "license": "Freeware",
     "url": "https://www.vconsole.com/ckfinder/userfiles/images/files/Flash_Drive_Tester_v114.exe#/dl.7z",
