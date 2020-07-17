@@ -1,16 +1,28 @@
 {
     "version": "4.21.0",
+<<<<<<< HEAD
     "description": "E-book manager.",
+=======
+    "description": "Powerful and easy to use e-book manager.",
+>>>>>>> 5bd84468264eb935fdcad4c3026cd72d75ef3355
     "homepage": "https://calibre-ebook.com/",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
+<<<<<<< HEAD
             "url": "https://github.com/kovidgoyal/calibre/releases/download/v4.21.0/calibre-64bit-4.21.0.msi",
+=======
+            "url": "https://www.fosshub.com/Calibre.html/calibre-64bit-4.21.0.msi",
+>>>>>>> 5bd84468264eb935fdcad4c3026cd72d75ef3355
             "hash": "dbc37706256185eed804f682f6ac9fd4b9645317f820057a995d1e34f1ca1dc5",
             "extract_dir": "PFiles\\Calibre2"
         },
         "32bit": {
+<<<<<<< HEAD
             "url": "https://github.com/kovidgoyal/calibre/releases/download/v4.21.0/calibre-4.21.0.msi",
+=======
+            "url": "https://www.fosshub.com/Calibre.html/calibre-4.21.0.msi",
+>>>>>>> 5bd84468264eb935fdcad4c3026cd72d75ef3355
             "hash": "d26585408ee716a8d40010c3ba4e8c6a9358ce3006e27fcba04d1418a35cff8d",
             "extract_dir": "PFiles\\Calibre"
         }
