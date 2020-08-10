@@ -14,7 +14,7 @@
             "",
             "reg add 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock' /t REG_DWORD /f /v AllowAllTrustedApps /d 1 | Out-Null",
             "",
-            "Add-AppxProvisionedPackage -Online -PackagePath \"$dir\\FluentTerminal.Package_${version}_x64.appxbundle\" -SkipLicense | Out-Null",
+            "Add-AppxProvisionedPackage -Online -PackagePath \"$dir\\FluentTerminal.Package_${version}_x86_x64.appxbundle\" -SkipLicense | Out-Null",
             "Invoke-WebRequest https://raw.githubusercontent.com/felixse/FluentTerminal/master/Explorer%20Context%20Menu%20Integration/Install.bat -OutFile \"$dir\\InstallContextMenu.bat\" -UseBasicParsing",
             "Invoke-WebRequest https://raw.githubusercontent.com/felixse/FluentTerminal/master/Explorer%20Context%20Menu%20Integration/Uninstall.bat -OutFile \"$dir\\UninstallContextMenu.bat\" -UseBasicParsing",
             "cmd /c \"$dir\\InstallContextMenu.bat > nul 2> nul\""
