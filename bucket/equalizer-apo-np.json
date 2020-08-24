@@ -15,7 +15,21 @@
     },
     "installer": {
         "script": [
-            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S', \"/D=$dir\") -RunAs | Out-Null",
+            "if (!(is_admin)) {",
+            "    error \"Administrator rights are required to install $app.\"",
+            "    exit 1",
+            "}",
+            "",
+            "Start-Job {",
+            "    while ($configurator_process -eq $null) {",
+            "        Start-Sleep -Milliseconds 250",
+            "        $configurator_process = Get-Process | Where-Object { $_.name -eq 'Configurator' }",
+            "    }",
+            "",
+            "    $configurator_process | ForEach-Object { Stop-Process -Id $_.Id }",
+            "} | Out-Null",
+            "",
+            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S', \"/D=$dir\") | Out-Null",
             "Remove-Item \"$dir\\setup.exe\""
         ]
     },
