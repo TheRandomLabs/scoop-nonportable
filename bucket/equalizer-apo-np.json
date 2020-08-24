@@ -1,6 +1,6 @@
 {
     "version": "1.2.1",
-    "description": "A parametric/graphic equalizer",
+    "description": "Parametric/graphic equalizer",
     "homepage": "https://sourceforge.net/projects/equalizerapo/",
     "license": "GPL-2.0-only",
     "architecture": {
