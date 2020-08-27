@@ -1,9 +1,8 @@
 {
-    "homepage": "https://www.wireguard.com",
-    "description": "Simple and fast VPN client.",
     "version": "0.1.1",
+    "description": "VPN client",
+    "homepage": "https://www.wireguard.com",
     "license": "MIT",
-    "depends": "sudo",
     "architecture": {
         "64bit": {
             "url": "https://download.wireguard.com/windows-client/wireguard-amd64-0.1.1.msi#/setup.msi_",
@@ -16,8 +15,13 @@
     },
     "installer": {
         "script": [
-            "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn', '/norestart') -RunAs | Out-Null",
-            "sudo taskkill /F /IM wireguard.exe"
+            "if (!(is_admin)) {",
+            "    error \"Administrator rights are required to install $app.\"",
+            "    exit 1",
+            "}",
+            "",
+            "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn', '/norestart') | Out-Null",
+            "Stop-Process -Name wireguard.exe"
         ]
     },
     "uninstaller": {
