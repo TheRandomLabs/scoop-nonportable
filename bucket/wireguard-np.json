@@ -21,7 +21,7 @@
             "}",
             "",
             "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn', '/norestart') | Out-Null",
-            "Stop-Process -Name wireguard.exe"
+            "Stop-Process -Name wireguard"
         ]
     },
     "uninstaller": {
