@@ -1,10 +1,10 @@
 {
-    "version": "15.8.6",
+    "version": "15.8.7",
     "description": "Basic variant of the K-Lite Codec Pack, a collection of DirectShow filters, VFW/ACM codecs and tools.",
     "homepage": "https://codecguide.com/about_kl.htm",
     "license": "Freeware",
-    "url": "https://files3.codecguide.com/K-Lite_Codec_Pack_1586_Basic.exe",
-    "hash": "7643afd3bd8fe6d05ac7a1e3fb413b6df9a54191478a4e8e1c38c79450afbfaf",
+    "url": "https://files3.codecguide.com/K-Lite_Codec_Pack_1587_Basic.exe",
+    "hash": "07a3ad18033af13e0184c3c838931eb184733f0e18c85024afc34a991e5b061a",
     "installer": {
         "args": [
             "/verysilent",
