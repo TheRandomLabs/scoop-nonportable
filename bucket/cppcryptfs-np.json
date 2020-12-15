@@ -3,6 +3,7 @@
     "description": "Implementation of the gocryptfs encrypted overlay filesystem in C++ for Windows.",
     "homepage": "https://github.com/bailey27/cppcryptfs",
     "license": "MIT",
+    "depends": "dokany-np",
     "architecture": {
         "64bit": {
             "url": [
@@ -30,8 +31,10 @@
         "cppcryptfs.exe"
     ],
     "shortcuts": [
-        ["cppcryptfs.exe", "cppcryptfs"]
+        [
+            "cppcryptfs.exe",
+            "cppcryptfs"
+        ]
     ],
-    "checkver": "github",
-    "depends": "dokany-np"
+    "checkver": "github"
 }
