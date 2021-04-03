@@ -1,5 +1,5 @@
 {
-    "version": "465.89",
+    "version": "461.92",
     "description": "NVIDIA display driver.",
     "homepage": "https://www.nvidia.com/Download/index.aspx",
     "license": "Freeware",
@@ -12,8 +12,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://us.download.nvidia.com/Windows/465.89/465.89-desktop-win10-64bit-international-dch-whql.exe#/dl.7z",
-            "hash": "932de24eaf32552961921d9df3ae83e0077a81d4ad46f9622701853df9c1dabe"
+            "url": "https://us.download.nvidia.com/Windows/461.92/461.92-desktop-win10-64bit-international-dch-whql.exe#/dl.7z",
+            "hash": "d7c2c7a37f693f350a505fdbdb73a9f7b5a34f9c71eff7e1b2306a5f6e4ff666"
         }
     },
     "installer": {
