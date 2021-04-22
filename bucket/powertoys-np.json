@@ -11,7 +11,7 @@
         }
     },
     "installer": {
-        "script": "Start-Process -Wait \"$dir\\setup.exe\" --silent -Verb Runas"
+        "args": "--silent"
     },
     "uninstaller": {
         "script": [
