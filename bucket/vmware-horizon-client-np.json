@@ -1,13 +1,13 @@
 {
-    "version": "2012-8.1.0-17349995",
+    "version": "2103-8.2.0-17759012",
     "description": "VMware Horizon Client for Windows allows you to connect to your VMware Horizon virtual desktop.",
     "homepage": "https://www.vmware.com/products/horizon.html",
     "license": "Proprietary",
     "depends": "dark",
     "architecture": {
         "64bit": {
-            "url": "https://download3.vmware.com/software/view/viewclients/CART21FQ4/VMware-Horizon-Client-2012-8.1.0-17349995.exe#/VMware-Horizon-Client-Setup.exe",
-            "hash": "77e5b2de068cc675ced808da6744b62988e83fb7756ab92478b9dd1f130d4c36"
+            "url": "https://download3.vmware.com/software/view/viewclients/CART22FQ1/VMware-Horizon-Client-2103-8.2.0-17759012.exe#/VMware-Horizon-Client-Setup.exe",
+            "hash": "1ffbdab7b88c0527b8f5c05540f92fbf74dd2d804fa20fe328cc18c0bc886fc9"
         }
     },
     "installer": {
@@ -26,18 +26,18 @@
         ]
     ],
     "checkver": {
-        "url": "https://my.vmware.com/channel/public/api/v1.0/dlg/details?downloadGroup=CART21FQ4_WIN_2012&productId=1027",
+        "url": "https://my.vmware.com/channel/public/api/v1.0/dlg/details?downloadGroup=CART22FQ1_WIN_2103&productId=1027",
         "jsonpath": "$.downloadFiles..thirdPartyDownloadUrl",
-        "regex": "(?<downloadgroup>CART\\d+FQ\\d)/VMware-Horizon-Client-(?<version>[\\d.-]+).exe"
+        "regex": "(?<downloadgroup>CART\\d+FQ\\d)/VMware-Horizon-Client-(?<fullversion>(?<version>\\d*)[\\d.-]+).exe"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://download3.vmware.com/software/view/viewclients/$matchDownloadgroup/VMware-Horizon-Client-$version.exe#/VMware-Horizon-Client-Setup.exe",
+                "url": "https://download3.vmware.com/software/view/viewclients/$downloadgroup/VMware-Horizon-Client-$fullversion.exe#/VMware-Horizon-Client-Setup.exe",
                 "hash": {
                     "mode": "json",
                     "jsonpath": "$.downloadFiles..sha256checksum",
-                    "url": "https://my.vmware.com/channel/public/api/v1.0/dlg/details?downloadGroup=$matchDownloadgroup_WIN_800&productId=1027"
+                    "url": "https://my.vmware.com/channel/public/api/v1.0/dlg/details?downloadGroup=$downloadgroup_WIN_$version&productId=1027"
                 }
             }
         }
