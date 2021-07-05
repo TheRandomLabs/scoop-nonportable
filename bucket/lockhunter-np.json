@@ -1,10 +1,11 @@
 {
     "version": "3.4.2",
-    "description": "File unlocker.",
+    "description": "Delete files blocked by something you do not know.",
     "homepage": "https://lockhunter.com/index.htm",
     "license": "Freeware",
     "url": "https://lockhunter.com/assets/exe/lockhuntersetup_3-4-2.exe",
     "hash": "ceccb8a91ff02b64ec45c0718f292759ce6f49cb7a8dff934111e69a454e3778",
+    "innosetup": true,
     "architecture": {
         "64bit": {
             "pre_install": [
@@ -55,7 +56,6 @@
             }
         }
     },
-    "innosetup": true,
     "post_install": [
         "Remove-Item \"$dir\\*,*.*\"",
         "Stop-Process -Name explorer"
@@ -67,11 +67,8 @@
             "LockHunter"
         ]
     ],
-    "checkver": {
-        "url": "https://lockhunter.com/download.htm",
-        "regex": "Version: ([\\d\\.]+)"
-    },
+    "checkver": "Version:\\s+([\\d.]+)",
     "autoupdate": {
-        "url": "https: //lockhunter.com/assets/exe/lockhuntersetup_$dashVersion.exe"
+        "url": "https://lockhunter.com/assets/exe/lockhuntersetup_$dashVersion.exe"
     }
 }
