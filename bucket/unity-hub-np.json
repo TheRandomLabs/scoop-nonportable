@@ -1,5 +1,5 @@
 {
-    "version": "2.4.3",
+    "version": "2.4.4",
     "description": "Management tool for Unity installations and projects",
     "homepage": "https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html",
     "license": {
@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": "https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe#/setup.exe",
-            "hash": "3cb22764ae2c467486448088d3c045e7d5d209b4adfeccc3e7de84beadb2ef36"
+            "hash": "62c7acbfd59549d683bbe3c9370aa218550253edfc0f5674eb0611c7b7cdd562"
         }
     },
     "installer": {
@@ -28,7 +28,7 @@
     },
     "checkver": {
         "url": "https://unity3d.com/hub/whats-new",
-        "regex": "content=\"##([\\d.]+)"
+        "regex": "<h2>([\\d.]+)</h2>"
     },
     "autoupdate": {
         "architecture": {
