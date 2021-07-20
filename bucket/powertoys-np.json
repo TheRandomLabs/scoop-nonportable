@@ -14,7 +14,11 @@
         "args": "--silent"
     },
     "uninstaller": {
-        "script": "cmd /c ((Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object {$_.DisplayName -eq \"PowerToys (Preview)\"} | Select-Object -Expand UninstallString) -replace '/I','/x')"
+        "script": [
+            "$uninstall_string = $(((Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object {$_.DisplayName -eq \"PowerToys (Preview)\"} | Select-Object -Expand UninstallString) -replace '/I','/x')+ ' /qn')",
+            "$argument_index = $uninstall_string.IndexOf('.exe') + 5",
+            "Start-Process -Wait \"$($uninstall_string.Substring(0, $argument_index))\" \"$($uninstall_string.Substring($argument_index))\" -Verb RunAs"
+        ]
     },
     "checkver": "github",
     "autoupdate": {
