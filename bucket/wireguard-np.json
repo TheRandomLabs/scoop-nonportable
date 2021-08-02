@@ -1,16 +1,16 @@
 {
-    "version": "0.3.17",
+    "version": "0.4",
     "description": "VPN client",
     "homepage": "https://www.wireguard.com",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://download.wireguard.com/windows-client/wireguard-amd64-0.3.17.msi#/setup.msi_",
-            "hash": "554d72b07d065842e88aacfb9781c71f1dd53e816526a2ba05a09842168e8ad2"
+            "url": "https://download.wireguard.com/windows-client/wireguard-amd64-0.4.msi#/setup.msi_",
+            "hash": "2a18ba01925a13d55f74150b347f2830e8c0b708bcab00ced4c5587a791070f2"
         },
         "32bit": {
-            "url": "https://download.wireguard.com/windows-client/wireguard-x86-0.3.17.msi#/setup.msi_",
-            "hash": "fa2f0d18aeffd28647fab703f1034f951563b11a08b968f261ba1edf9321de75"
+            "url": "https://download.wireguard.com/windows-client/wireguard-x86-0.4.msi#/setup.msi_",
+            "hash": "fa9780c322bb7466395d62ea3b348545f6b732f64cd6bec559161e29fba47d29"
         }
     },
     "installer": {
