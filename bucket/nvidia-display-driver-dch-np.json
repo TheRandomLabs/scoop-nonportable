@@ -1,5 +1,5 @@
 {
-    "version": "466.47",
+    "version": "471.41",
     "description": "NVIDIA display driver.",
     "homepage": "https://www.nvidia.com/Download/index.aspx",
     "license": "Freeware",
@@ -12,8 +12,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://us.download.nvidia.com/Windows/466.47/466.47-desktop-win10-64bit-international-dch-whql.exe#/dl.7z",
-            "hash": "316c817a321496658fc19a7b2d2981a0e90c7af026ff36f0715083000237dd30"
+            "url": "https://us.download.nvidia.com/Windows/471.41/471.41-desktop-win10-64bit-international-dch-whql.exe#/dl.7z",
+            "hash": "e0a6c5fad2a1476c8d9f1438c13111794b5d759a6efdec54bea3cf199cb1b91f"
         }
     },
     "installer": {
