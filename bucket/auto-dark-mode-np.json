@@ -6,7 +6,7 @@
         "identifier": "GPL-3.0-only"
     },
     "url": "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode/releases/download/10.0.0.26/AutoDarkModeX_10.0.0.26.exe",
-    "hash": "04D1C0D669EAF217D3CBE1F596DAFDF3FCEF91A0EAE4686A3F9B5C5652ED9886",
+    "hash": "ed95bbd34de1340dc50a33a6182f0586191adce59f18d741558379fb70417367",
     "notes": "Settings need to be reapplied after updating.",
     "installer": {
         "script": [
