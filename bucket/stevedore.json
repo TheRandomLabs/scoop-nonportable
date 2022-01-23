@@ -1,0 +1,44 @@
+{
+    "version": "0.0.4",
+    "description": "Docker distribution for Windows that Just Works",
+    "homepage": "https://github.com/slonopotamus/stevedore",
+    "license": "Apache-2.0",
+    "notes": [
+        "To install Hyper-V: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart`",
+        "To install Windows Containers: `Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart` as admin.",
+        "A restart is required on the first install."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/slonopotamus/stevedore/releases/download/0.0.4/stevedore-0.0.4-x86_64.msi",
+            "hash": "14ccc277882fdd7e59b0f7105d0be33d32b4bfb4874e804b045ba313dedc9111"
+        }
+    },
+    "uninstaller": {
+        "script": "(Get-Service stevedored) -and (sudo Remove-Service stevedored)"
+    },
+    "pre_install": "(Get-Service stevedored) -and (sudo Stop-Service stevedored) -and (sudo Remove-Service stevedored)",
+    "post_install": [
+        "(Get-LocalGroup -Name docker-users) -or (New-LocalGroup -Name docker-users -Description 'Users of Docker Desktop')",
+        "sudo dockerd --register-service --service-name stevedored -G docker-users",
+        "sudo Start-Service stevedored"
+    ],
+    "bin": [
+        "PFiles/Stevedore/dockerd.exe",
+        "PFiles/Stevedore/bin/docker.exe",
+        "PFiles/Docker/cli-plugins/docker-app.exe",
+        "PFiles/Stevedore/bin/com.docker.cli.exe",
+        "PFiles/Stevedore/bin/docker-compose.exe",
+        "PFiles/Docker/cli-plugins/docker-buildx.exe",
+        "PFiles/Docker/cli-plugins/docker-compose.exe",
+        "PFiles/Docker/cli-plugins/docker-scan.exe"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/slonopotamus/stevedore/releases/download/$version/stevedore-$version-x86_64.msi"
+            }
+        }
+    }
+}
