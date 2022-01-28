@@ -1,5 +1,5 @@
 {
-    "version": "3.0.3",
+    "version": "3.1.1",
     "description": "A command-line utility that pipes video streams from various services into a video player.",
     "homepage": "https://streamlink.github.io/",
     "license": "BSD-2-Clause",
@@ -13,8 +13,8 @@
         "MPV Player": [ "extras/mpv", "extras/mpv-git" ]
         "Streamlink Twitch GUI": "extras/streamlink-twitch-gui"
     },
-    "url": "https://github.com/streamlink/streamlink/releases/download/3.0.3/streamlink-3.0.3.exe#/dl.7z",
-    "hash": "f6de6fcf2aa2bf532d18782ec1e9421b173bd627fc0e6faf8427807289483d37",
+    "url": "https://github.com/streamlink/streamlink/releases/download/3.1.1/streamlink-3.1.1.exe#/dl.7z",
+    "hash": "178c3edf3d49f4e76b67e1ee9b9984eef21a079cbf1a732b99c7bc42a7eec762",
     "pre_install": [
         "if (!(Test-Path \"$env:APPDATA\\streamlink\\config\")) {",
         "    info 'Copying default ''config'' to ''%APPDATA%\\streamlink\\config'''",
