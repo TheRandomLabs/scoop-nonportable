@@ -1,10 +1,10 @@
 {
-    "version": "2.4.0",
+    "version": "2.3.4",
     "description": "Mimics the functionality of a KVM switch, which allows a single keyboard and mouse to control multiple machines.",
     "homepage": "https://github.com/debauchee/barrier",
     "license": "GPL-2.0",
-    "url": "https://github.com/debauchee/barrier/releases/download/v2.4.0/BarrierSetup-2.4.0-release.exe",
-    "hash": "7e66b7b4d13312e607edd06f8ea38f3c9b09b3e8aea2b55250c00b25f9892885",
+    "url": "https://github.com/debauchee/barrier/releases/download/v2.3.4/BarrierSetup-2.3.4-release.exe",
+    "hash": "ddd58deef08b7cdc967231e61750ae9596354e091ae4cfd2ca0b5e83564adbef",
     "installer": {
         "args": [
             "/verysilent",
