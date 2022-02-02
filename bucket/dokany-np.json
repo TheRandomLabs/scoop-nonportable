@@ -6,11 +6,11 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/dokan-dev/dokany/releases/download/v2.0.1.2000/Dokan_x64.msi#/setup.msi_",
-            "hash": "ccb80a07703fdef2f86f80d739ad329bc4f4353fe1e9af5c297bfe1b85434097"
+            "hash": "5fadb7d0a74c360af51ae8cd552f24d02070d82c2e5b299f5a2fae8953d0eae3"
         },
         "32bit": {
             "url": "https://github.com/dokan-dev/dokany/releases/download/v2.0.1.2000/Dokan_x86.msi#/setup.msi_",
-            "hash": "edd887065ba79b81e17e471b1873275b7ca8cf2f569ab10221d12bd8d319d0c5"
+            "hash": "301aad49e35b4dee4bc9f0bb43bae19fcac802032e896d7e6974acfb668582b8"
         }
     },
     "installer": {
