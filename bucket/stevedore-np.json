@@ -1,5 +1,5 @@
 {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Docker distribution for Windows that Just Works",
     "homepage": "https://github.com/slonopotamus/stevedore",
     "license": "Apache-2.0",
@@ -9,8 +9,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/slonopotamus/stevedore/releases/download/0.2.0/stevedore-0.2.0-x86_64.msi#/setup.msi_",
-            "hash": "6dbd7824da0160567dda1d48349cc24d42abeaf5a8b8aef33f2b4ac9e200ab55"
+            "url": "https://github.com/slonopotamus/stevedore/releases/download/0.3.0/stevedore-0.3.0-x86_64.msi#/setup.msi_",
+            "hash": "c971020e329db5fdd8b2e366d457c7b431ec2c9188627bd2e9ebd768c9f10113"
         }
     },
     "installer": {
