@@ -1,10 +1,10 @@
 {
-    "version": "5.2.0.771",
+    "version": "5.4.0.259",
     "description": "Powerful computer software for mathematics.",
     "homepage": "https://education.ti.com/en/software/details/en/AFCFF2853BC34DEFB4C0B8B156F92404/ti-nspirecx_pc_full",
     "license": "Proprietary",
-    "url": "https://education.ti.com/download/en/ed-tech/AFCFF2853BC34DEFB4C0B8B156F92404/FFB2469680804CEF826EB846E0F394F6/TINspireCXStudentSoftware-5.2.0.771.msi#/setup.msi_",
-    "hash": "5479f9cad46d3dcf64733ebe67ef0043b905b5bc2a99a6eca996c16adee06a0e",
+    "url": "https://education.ti.com/download/en/ed-tech/AFCFF2853BC34DEFB4C0B8B156F92404/BF6BDC36C205499FB69393D758CCFA3D/TINspireCXStudentSoftware-5.4.0.259.msi#/setup.msi_",
+    "hash": "b64158d14ca3fd332eeb596102346c50162cb36caf3ecec4988a84aeb808c352",
     "installer": {
         "script": [
             "Start-Process -Wait msiexec \"/i `\"$dir\\setup.msi_`\" /qn APPDIR=`\"$dir`\" SHORTCUTDIR=`\"$dir\\shortcuts`\" DesktopFolder=`\"$dir\\shortcuts`\"\" -Verb RunAs",

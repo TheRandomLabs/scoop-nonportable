@@ -1,19 +1,19 @@
 {
-    "version": "14.16.1",
+    "version": "16.14.2",
     "description": "JavaScript runtime environment.",
     "homepage": "https://nodejs.org",
     "license": "MIT",
     "notes": "npm global prefix set to: $env:APPDATA\\npm",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v14.16.1/node-v14.16.1-win-x64.7z",
-            "hash": "3797bbe3c9ff6a0052eb550afcbf2af1ba7374743e54ce89039bbbcd3e988944",
-            "extract_dir": "node-v14.16.1-win-x64"
+            "url": "https://nodejs.org/dist/v16.14.2/node-v16.14.2-win-x64.7z",
+            "hash": "3f4b168eaa479397ec40ab8f514e2a924b078a032845fb896d364c0b4084b19c",
+            "extract_dir": "node-v16.14.2-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v14.16.1/node-v14.16.1-win-x86.7z",
-            "hash": "005a8c367608d96eb13a79d78cf28df161ee8aa63766e6d130c7ae3977dd241a",
-            "extract_dir": "node-v14.16.1-win-x86"
+            "url": "https://nodejs.org/dist/v16.14.2/node-v16.14.2-win-x86.7z",
+            "hash": "5b550768e452cf4d8039aa903c1e5881326c1837e7db6f14d5b11dea8302629a",
+            "extract_dir": "node-v16.14.2-win-x86"
         }
     },
     "installer": {

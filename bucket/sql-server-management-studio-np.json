@@ -1,10 +1,10 @@
 {
-    "version": "15.0.18384.0",
+    "version": "15.0.18410.0",
     "description": "Integrated environment for SQL Server infrastructure administration and T-SQL development.",
     "homepage": "https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms",
     "license": "Freeware",
     "url": "https://aka.ms/ssmsfullsetup#/SSMS-Setup-ENU.exe",
-    "hash": "ce12a64f066df907fb62077e5d22a8c5312893664212cca4660d8ebeee2f59c6",
+    "hash": "d9a7470d327cfc59b4b2c1a0233bc9af6fde364b38874e69ea591992eee906c7",
     "installer": {
         "script": [
             "$log = \"$dir\\SSMS-Setup-ENU-Install.log\"",

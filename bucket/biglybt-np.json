@@ -1,16 +1,16 @@
 {
-    "version": "2.7.0.2",
+    "version": "3.0.0.0",
     "homepage": "https://www.biglybt.com/",
     "description": "BitTorrent client.",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/BiglySoftware/BiglyBT/releases/download/v2.7.0.2/Github_BiglyBT_Installer64.exe#/setup.exe",
-            "hash": "2f3da1fad8d5841a913f1e73aa6160b0c3149bc0aca6d1638a439ff5560a00be"
+            "url": "https://github.com/BiglySoftware/BiglyBT/releases/download/v3.0.0.0/Github_BiglyBT_Installer64.exe#/setup.exe",
+            "hash": "22bf85a7dbbfe5c2cc3841cde687ac5ece6e7828eb4fad6e658ba9c413707ffb"
         },
         "32bit": {
-            "url": "https://github.com/BiglySoftware/BiglyBT/releases/download/v2.7.0.2/Github_BiglyBT_Installer32.exe#/setup.exe",
-            "hash": "d1c37458071696e20813ea6455787061de825f24c83d0a502cba1a2193367e7a"
+            "url": "https://github.com/BiglySoftware/BiglyBT/releases/download/v3.0.0.0/Github_BiglyBT_Installer32.exe#/setup.exe",
+            "hash": "1cb4d8b27500775dc523e1e5d0e3bd2f9cbae4a93605c75f86b35a0f0b7a5358"
         }
     },
     "installer": {
