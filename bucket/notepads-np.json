@@ -1,10 +1,10 @@
 {
-    "version": "1.4.2.0",
+    "version": "1.4.7.0",
     "description": "Lightweight text editor.",
     "homepage": "https://www.notepadsapp.com/",
     "license": "MIT",
-    "url": "https://github.com/JasonStein/Notepads/releases/download/v1.4.2.0/Notepads_1.4.2.0_x86_x64.msixbundle#/Notepads.msixbundle",
-    "hash": "49fa4694226f39e7647201905fee522760cab88c9cbc0e4329615a2abe91f555",
+    "url": "https://github.com/0x7c13/Notepads/releases/download/v1.4.7.0/Notepads_1.4.7.0_x86_x64_arm64.msixbundle#/Notepads.msixbundle",
+    "hash": "935B53B026E2B2AE968920C15500B8E230FC6EB12BBB18D368A91724721807F7",
     "installer": {
         "script": [
             "if (!(is_admin)) {",
@@ -40,9 +40,9 @@
     },
     "persist": "Settings",
     "checkver": {
-        "github": "https://github.com/JasonStein/Notepads"
+        "github": "https://github.com/0x7c13/Notepads"
     },
     "autoupdate": {
-        "url": "https://github.com/JasonStein/Notepads/releases/download/v$version/Notepads_$version_x86_x64.msixbundle#/Notepads.msixbundle"
+        "url": "https://github.com/0x7c13/Notepads/releases/download/v$version/Notepads_$version_x86_x64_arm64.msixbundle#/Notepads.msixbundle"
     }
 }
