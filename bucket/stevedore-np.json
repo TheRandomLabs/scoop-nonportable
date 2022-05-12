@@ -1,0 +1,30 @@
+{
+    "version": "0.3.2",
+    "description": "Docker distribution for Windows that Just Works",
+    "homepage": "https://github.com/slonopotamus/stevedore",
+    "license": "Apache-2.0",
+    "notes": [
+        "A restart may be required, at least on the first install.",
+        "Please run `sc start stevedored` as an administrator if `docker run` does not work."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/slonopotamus/stevedore/releases/download/0.3.2/stevedore-0.3.2-x86_64.msi#/setup.msi_",
+            "hash": "e0c3e0b307f55138a0c5726807e40dbce080df8f0e5924bd2d135014099302cf"
+        }
+    },
+    "installer": {
+        "script": "Start-Process -Wait msiexec \"/i `\"$dir\\setup.msi_`\" /qn /norestart\" -Verb RunAs"
+    },
+    "uninstaller": {
+        "script": "Start-Process -Wait msiexec \"/x `\"$dir\\setup.msi_`\" /qn /norestart\" -Verb RunAs"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/slonopotamus/stevedore/releases/download/$version/stevedore-$version-x86_64.msi#/setup.msi_"
+            }
+        }
+    }
+}
