@@ -8,13 +8,12 @@
     "installer": {
         "file": "teracopy.exe",
         "args": [
-            "/verysilent",
-            "/nocancel",
+            "/quiet",
             "/norestart"
         ]
     },
     "uninstaller": {
-        "script": "& \"$env:PROGRAMFILES\\TeraCopy\\unins000.exe\" /verysilent /nocancel /norestart"
+        "script": "& \"$env:PROGRAMFILES\\TeraCopy\\unins000.exe\" /quiet /norestart"
     },
     "checkver": {
         "url": "https://www.codesector.com/downloads",
