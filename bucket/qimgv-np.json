@@ -1,0 +1,47 @@
+{
+    "version": "0.9.1",
+    "description": "Fast, configurable, easy to use image viewer",
+    "homepage": "https://github.com/easymodo/qimgv",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/easymodo/qimgv/releases/download/v0.9.1/qimgv-x64_0.9.1.exe",
+            "hash": "e57e9bdcdca545bc508dd735bca524401987a180c00ef334e9dfcdeb25a893e5"
+        },
+        "32bit": {
+            "url": "https://github.com/easymodo/qimgv/releases/download/v0.9.1/qimgv_0.9.1.exe",
+            "hash": "db6a9a0884849b1503de1f440e2cd43014647cdd7bd2e1a4e5566be568817889"
+        }
+    },
+    "installer": {
+        "script": [
+            "Invoke-ExternalCommand -FilePath \"$dir\\$fname\" -ArgumentList @('/SP-', '/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', \"/DIR=$dir\") -RunAs | Out-Null",
+            "Remove-Item \"$dir\\$fname\""
+        ]
+    },
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/SP-",
+            "/VERYSILENT",
+            "/SUPPRESSMSGBOXES",
+            "/NORESTART"
+        ]
+    },
+    "persist": [
+        "cache",
+        "conf",
+        "thumbnails"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/easymodo/qimgv/releases/download/v$version/qimgv-x64_$version.exe"
+            },
+            "32bit": {
+                "url": "https://github.com/easymodo/qimgv/releases/download/v$version/qimgv_$version.exe"
+            }
+        }
+    }
+}
