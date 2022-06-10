@@ -3,7 +3,7 @@
   "description": "Peace Equalizer, an user interface for Equalizer APO",
   "homepage": "https://sourceforge.net/projects/peace-equalizer-apo-extension/",
   "license": "GPL-2.0-only",
-  "url": "https://cfhcable.dl.sourceforge.net/project/peace-equalizer-apo-extension/Peace.exe",
+  "url": "https://sourceforge.net/projects/peace-equalizer-apo-extension/files/Peace.exe/download",
   "hash": "sha1:167f714a314a13ab14701a0001b0b2d7b37a9570",
   "installer": {
     "script": [
@@ -12,7 +12,7 @@
       "    exit 1",
       "}",
       "Set-Variable -Name ConfigPath -Value (Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\EqualizerAPO' -Name 'ConfigPath')",
-      "Move-Item \"$dir\\Peace.exe\" \"$ConfigPath\\Peace.exe\"",
+      "Move-Item \"$dir\\download\" \"$ConfigPath\\Peace.exe\"",
       "New-Item -ItemType SymbolicLink -Path \"$dir\\Peace.exe\" -Target \"$ConfigPath\\Peace.exe\""
     ]
   },
@@ -32,7 +32,7 @@
     "regex": "Version\\s+([\\d.]+)"
   },
   "autoupdate": {
-    "url": "https://cfhcable.dl.sourceforge.net/project/peace-equalizer-apo-extension/Peace.exe"
+    "url": "https://sourceforge.net/projects/peace-equalizer-apo-extension/files/Peace.exe/download"
   },
   "depends": ["equalizer-apo-np"]
 }
