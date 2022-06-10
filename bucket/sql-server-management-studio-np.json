@@ -4,7 +4,7 @@
     "homepage": "https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms",
     "license": "Freeware",
     "url": "https://aka.ms/ssmsfullsetup#/SSMS-Setup-ENU.exe",
-    "hash": "d9a7470d327cfc59b4b2c1a0233bc9af6fde364b38874e69ea591992eee906c7",
+    "hash": "7a2cf984ab8d6f825dd2116165bb109ae8f6a3d65bcc31ea436602e46046205d",
     "installer": {
         "script": [
             "$log = \"$dir\\SSMS-Setup-ENU-Install.log\"",
