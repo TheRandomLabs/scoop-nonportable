@@ -1,0 +1,36 @@
+{
+  "version": "1.6.1.2",
+  "description": "Peace Equalizer, interface Equalizer APO",
+  "homepage": "https://sourceforge.net/projects/peace-equalizer-apo-extension/",
+  "license": "GPL-2.0-only",
+  "url": "https://cfhcable.dl.sourceforge.net/project/peace-equalizer-apo-extension/Peace.exe",
+  "hash": "sha1:167f714a314a13ab14701a0001b0b2d7b37a9570",
+  "bin": "Peace.exe",
+  "installer": {
+    "script": [
+      "if (!(is_admin)) {",
+      "    error \"Administrator rights are required to install $app.\"",
+      "    exit 1",
+      "}",
+      "Set-Variable -Name ConfigPath -Value (Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\EqualizerAPO' -Name 'ConfigPath')",
+      "Move-Item \"$dir\\Peace.exe\" \"$ConfigPath\\Peace.exe\"",
+      "New-Item -ItemType SymbolicLink -Path \"$dir\\Peace.exe\" -Target \"$ConfigPath\\Peace.exe\""
+    ]
+  },
+  "uninstaller": {
+    "script": [
+        "if (!(is_admin)) {",
+        "    error \"Administrator rights are required to uninstall $app.\"",
+        "    exit 1",
+        "}",
+        "Set-Variable -Name ConfigPath -Value (Get-ItemPropertyValue -Path 'HKLM:\\SOFTWARE\\EqualizerAPO' -Name 'ConfigPath')",
+        "Remove-Item \"$ConfigPath\\Peace.exe\""
+      ]
+    },
+  "shortcuts": [["Peace.exe", "Peace"]],
+  "checkver": {
+    "url": "https://sourceforge.net/projects/peace-equalizer-apo-extension/files/",
+    "regex": "equalizerapo/files/([\\d.]+)/"
+  },
+  "depends": ["equalizer-apo-np"]
+}
