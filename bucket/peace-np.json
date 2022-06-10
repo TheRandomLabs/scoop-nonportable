@@ -1,11 +1,10 @@
 {
   "version": "1.6.1.2",
-  "description": "Peace Equalizer, interface Equalizer APO",
+  "description": "Peace Equalizer, an user interface for Equalizer APO",
   "homepage": "https://sourceforge.net/projects/peace-equalizer-apo-extension/",
   "license": "GPL-2.0-only",
   "url": "https://cfhcable.dl.sourceforge.net/project/peace-equalizer-apo-extension/Peace.exe",
   "hash": "sha1:167f714a314a13ab14701a0001b0b2d7b37a9570",
-  "bin": "Peace.exe",
   "installer": {
     "script": [
       "if (!(is_admin)) {",
@@ -30,7 +29,10 @@
   "shortcuts": [["Peace.exe", "Peace"]],
   "checkver": {
     "url": "https://sourceforge.net/projects/peace-equalizer-apo-extension/files/",
-    "regex": "equalizerapo/files/([\\d.]+)/"
+    "regex": "Version\\s+([\\d.]+)"
+  },
+  "autoupdate": {
+    "url": "https://cfhcable.dl.sourceforge.net/project/peace-equalizer-apo-extension/Peace.exe"
   },
   "depends": ["equalizer-apo-np"]
 }
