@@ -1,22 +1,22 @@
 {
-    "version": "3.0.1",
+    "version": "10.0.0.26",
     "description": "Automatically switches between the dark and light theme of Windows 10 at scheduled times.",
     "homepage": "https://github.com/Armin2208/Windows-Auto-Night-Mode",
     "license": {
         "identifier": "GPL-3.0-only"
     },
-    "url": "https://github.com/Armin2208/Windows-Auto-Night-Mode/releases/download/3.0/AutoDarkMode_v3_0_1_Setup.exe",
-    "hash": "eb58ad3ef3529ce1327abb7e2417f138b7aa0e5126ae65ee499986c09249282b",
+    "url": "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode/releases/download/10.0.0.26/AutoDarkModeX_10.0.0.26.exe",
+    "hash": "ed95bbd34de1340dc50a33a6182f0586191adce59f18d741558379fb70417367",
     "notes": "Settings need to be reapplied after updating.",
     "installer": {
         "script": [
             "if ([Environment]::OSVersion.Version.Major -ne 10) {",
-            "   error \"$app only supports Windows 10.\"",
+            "   error \"$app only supports Windows 10 or after.\"",
             "   exit 1",
             "}",
             "",
-            "Invoke-ExternalCommand -FilePath \"$dir\\AutoDarkMode_v3_0_1_Setup.exe\" -ArgumentList @('/SP-', '/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', \"/DIR=$dir\") -RunAs | Out-Null",
-            "Remove-Item \"$dir\\AutoDarkMode_v3_0_1_Setup.exe\""
+            "Invoke-ExternalCommand -FilePath \"$dir\\AutoDarkModeX_10.0.0.26.exe\" -ArgumentList @('/SP-', '/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', \"/DIR=$dir\") -RunAs | Out-Null",
+            "Remove-Item \"$dir\\AutoDarkModeX_10.0.0.26.exe\""
         ]
     },
     "uninstaller": {
@@ -29,6 +29,6 @@
     },
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/Armin2208/Windows-Auto-Night-Mode/releases/download/$version/AutoDarkMode_v$underscoreVersion_Setup.exe"
+        "url": "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode/releases/download/$version/AutoDarkMode_v$underscoreVersion_Setup.exe"
     }
 }
