@@ -32,7 +32,7 @@
     },
     "checkver": {
         "url": "https://www.teamviewer.com/en/download/windows/",
-        "regex": ">Current version: (\\d+\\.\\d+\\.\\d+)<"
+        "regex": ">Current version: (\\d+[\\.\\d]*)<"
     },
     "autoupdate": {
         "architecture": {
