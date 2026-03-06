@@ -1,16 +1,16 @@
 {
-    "version": "0.81.0-2",
+    "version": "0.81",
     "description": "Codec pack with video players.",
     "homepage": "https://www.videohelp.com/software/LAV-Filters-Megamix",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://www.videohelp.com/download/Megamix-LAVFilters-0.81.0-2-x64.exe",
-            "hash": "6b1edc2ce64b10bbc4839aa527b0165947deff9679aff5f96a6f1ccb14c424a0"
+            "url": "https://www.videohelp.com/download/Megamix-LAVFilters-0.81-x64.exe",
+            "hash": "d014d892f5bd542967bf1b6753b7703f835272d5e0aed30151a60e5533bbebb5"
         },
         "32bit": {
-            "url": "https://www.videohelp.com/download/Megamix-LAVFilters-0.81.0-2-x86.exe",
-            "hash": "79b8c1731a4102b0854be27503aee4d6df859f498ba15da9c61ca1689f27c57f"
+            "url": "https://www.videohelp.com/download/Megamix-LAVFilters-0.81-x86.exe",
+            "hash": "d014d892f5bd542967bf1b6753b7703f835272d5e0aed30151a60e5533bbebb5"
         }
     },
     "installer": {
