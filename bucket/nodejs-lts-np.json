@@ -27,7 +27,8 @@
     },
     "bin": [
         "node.exe",
-        "npm.cmd"
+        "npm.cmd",
+        "npx.cmd"
     ],
     "checkver": {
         "url": "https://nodejs.org/en/download/",
