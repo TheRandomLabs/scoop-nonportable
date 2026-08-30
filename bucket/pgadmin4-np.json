@@ -1,10 +1,10 @@
 {
-    "version": "4.29",
+    "version": "5.2",
     "homepage": "https://www.pgadmin.org/",
     "description": "PostgreSQL administration and development platform.",
     "license": "PostgreSQL",
-    "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.29/windows/pgadmin4-4.29-x86.exe",
-    "hash": "9d7945ac6e056ff507ef1919a6fbac7987b02d8f91b6b119a98f8da7624c691f",
+    "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v5.2/windows/pgadmin4-5.2-x64.exe",
+    "hash": "dfdae78878d32f1be568d6a79508e567a6376bd807296132c48bf90637d69b12",
     "installer": {
         "args": [
             "/verysilent",
@@ -40,6 +40,6 @@
         "regex": "pgAdmin 4 v([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v$version/windows/pgadmin4-$version-x86.exe"
+        "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v$version/windows/pgadmin4-$version-x64.exe"
     }
 }
