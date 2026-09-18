@@ -11,8 +11,8 @@
                 "https://github.com/bailey27/cppcryptfs/releases/download/1.4.3.5/cppcryptfsctl.exe"
             ],
             "hash": [
-                "4cc34b35c810f428e94520a0df1bc662a6d3a609195db71f8ee04698f1922779",
-                "fd71c402a2fb517e71b3ee180afb308391bef9502e7af96b6d0d813764a3e327"
+                "d81c77262fcbd1fc87735aa985534bf113c0c96eba6319bd2e5f97b8e589c676",
+                "161b3bdabc7724356d117fed3d6b92aa23cbe6e10f1a95b3e5f7c5f27411ef31"
             ]
         },
         "32bit": {
@@ -21,8 +21,8 @@
                 "https://github.com/bailey27/cppcryptfs/releases/download/1.4.3.5/cppcryptfsctl32.exe#/cppcryptfsctl.exe"
             ],
             "hash": [
-                "09730edf0da51e84119e0e9b74cbb86f4c1888dad399f471f4ba160934e67711",
-                "c94ae2fb775260c8ee649bbc660ad8514fd936d48aeaf3b8cf0188492bd7e521"
+                "be74928705dab0ffe07f557453292f14cfe67c9ee1c3911016e9df49f957f934",
+                "07519de1cb9dc4590805cbda3c027b810c70324725c9704e13784cf5d7d96037"
             ]
         }
     },
